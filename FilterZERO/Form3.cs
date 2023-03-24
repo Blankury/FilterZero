@@ -27,6 +27,12 @@ namespace FilterZERO
         List<string> usuarios = new List<string>();
         int contador, numLabels, t;
         string nombre, nombres = null;
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
+        }
+
         public Form3()
         {
             InitializeComponent();
@@ -35,23 +41,24 @@ namespace FilterZERO
             try
             {
 
-                string Labelsinf = File.ReadAllText(Application.StartupPath+"/Faces/Faces.txt");
+                string Labelsinf = File.ReadAllText(Application.StartupPath + "/Faces/Faces.txt");
                 string[] Labels = Labelsinf.Split(',');
                 //el primer label antes, sera el numero de caras guardadas.
                 numLabels = Convert.ToInt16(Labels[0]);
                 contador = numLabels;
                 string FacesLoad;
-                for (int i=1; i<numLabels+1; i++)
+                for (int i = 1; i < numLabels + 1; i++)
                 {
                     FacesLoad = "caras" + i + ".bmp";
-                    trainingImages.Add(new Image<Gray, byte>(Application.StartupPath+"/Faces/Faces.txt"));
+                    trainingImages.Add(new Image<Gray, byte>(Application.StartupPath + "/Faces/Faces.txt"));
                     labels.Add(Labels[i]);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Nada en la db.");
+                //MessageBox.Show("Nada en la db.");
             }
+
         }
 
 

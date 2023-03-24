@@ -130,7 +130,7 @@ namespace FilterZERO
             // colorizarToolStripMenuItem
             // 
             this.colorizarToolStripMenuItem.Name = "colorizarToolStripMenuItem";
-            this.colorizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.colorizarToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.colorizarToolStripMenuItem.Text = "Colorizar";
             this.colorizarToolStripMenuItem.Click += new System.EventHandler(this.colorizarToolStripMenuItem_Click);
             // 
@@ -142,7 +142,7 @@ namespace FilterZERO
             this.toolStripMenuItem9,
             this.toolStripMenuItem11});
             this.contrasteToolStripMenuItem.Name = "contrasteToolStripMenuItem";
-            this.contrasteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.contrasteToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.contrasteToolStripMenuItem.Text = "Contraste";
             this.contrasteToolStripMenuItem.Click += new System.EventHandler(this.contrasteToolStripMenuItem_Click);
             // 
@@ -173,14 +173,14 @@ namespace FilterZERO
             // invertirToolStripMenuItem
             // 
             this.invertirToolStripMenuItem.Name = "invertirToolStripMenuItem";
-            this.invertirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.invertirToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.invertirToolStripMenuItem.Text = "Invertir";
             this.invertirToolStripMenuItem.Click += new System.EventHandler(this.invertirToolStripMenuItem_Click);
             // 
             // mosaicoToolStripMenuItem
             // 
             this.mosaicoToolStripMenuItem.Name = "mosaicoToolStripMenuItem";
-            this.mosaicoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mosaicoToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.mosaicoToolStripMenuItem.Text = "Mosaico";
             this.mosaicoToolStripMenuItem.Click += new System.EventHandler(this.mosaicoToolStripMenuItem_Click);
             // 
@@ -194,55 +194,55 @@ namespace FilterZERO
             this.ruido75,
             this.ruido90});
             this.ruidoToolStripMenuItem.Name = "ruidoToolStripMenuItem";
-            this.ruidoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ruidoToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.ruidoToolStripMenuItem.Text = "Ruido";
             // 
             // ruido15
             // 
             this.ruido15.Name = "ruido15";
-            this.ruido15.Size = new System.Drawing.Size(180, 22);
+            this.ruido15.Size = new System.Drawing.Size(96, 22);
             this.ruido15.Text = "15%";
             this.ruido15.Click += new System.EventHandler(this.ruido15_Click);
             // 
             // ruido30
             // 
             this.ruido30.Name = "ruido30";
-            this.ruido30.Size = new System.Drawing.Size(180, 22);
+            this.ruido30.Size = new System.Drawing.Size(96, 22);
             this.ruido30.Text = "30%";
             this.ruido30.Click += new System.EventHandler(this.ruido30_Click);
             // 
             // ruido45
             // 
             this.ruido45.Name = "ruido45";
-            this.ruido45.Size = new System.Drawing.Size(180, 22);
+            this.ruido45.Size = new System.Drawing.Size(96, 22);
             this.ruido45.Text = "45%";
             this.ruido45.Click += new System.EventHandler(this.ruido45_Click);
             // 
             // ruido60
             // 
             this.ruido60.Name = "ruido60";
-            this.ruido60.Size = new System.Drawing.Size(180, 22);
+            this.ruido60.Size = new System.Drawing.Size(96, 22);
             this.ruido60.Text = "60%";
             this.ruido60.Click += new System.EventHandler(this.ruido60_Click);
             // 
             // ruido75
             // 
             this.ruido75.Name = "ruido75";
-            this.ruido75.Size = new System.Drawing.Size(180, 22);
+            this.ruido75.Size = new System.Drawing.Size(96, 22);
             this.ruido75.Text = "75%";
             this.ruido75.Click += new System.EventHandler(this.ruido75_Click);
             // 
             // ruido90
             // 
             this.ruido90.Name = "ruido90";
-            this.ruido90.Size = new System.Drawing.Size(180, 22);
+            this.ruido90.Size = new System.Drawing.Size(96, 22);
             this.ruido90.Text = "90%";
             this.ruido90.Click += new System.EventHandler(this.ruido90_Click);
             // 
             // tonosDeGrisToolStripMenuItem
             // 
             this.tonosDeGrisToolStripMenuItem.Name = "tonosDeGrisToolStripMenuItem";
-            this.tonosDeGrisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tonosDeGrisToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.tonosDeGrisToolStripMenuItem.Text = "Tonos de gris";
             this.tonosDeGrisToolStripMenuItem.Click += new System.EventHandler(this.tonosDeGrisToolStripMenuItem_Click);
             // 
@@ -305,12 +305,12 @@ namespace FilterZERO
             // 
             // Borrar_Filtros
             // 
+            this.Borrar_Filtros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Borrar_Filtros.BackColor = System.Drawing.Color.Orange;
-            this.Borrar_Filtros.Dock = System.Windows.Forms.DockStyle.Top;
             this.Borrar_Filtros.FlatAppearance.BorderSize = 0;
             this.Borrar_Filtros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Borrar_Filtros.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Borrar_Filtros.Location = new System.Drawing.Point(6, 80);
+            this.Borrar_Filtros.Location = new System.Drawing.Point(6, 252);
             this.Borrar_Filtros.Name = "Borrar_Filtros";
             this.Borrar_Filtros.Size = new System.Drawing.Size(196, 32);
             this.Borrar_Filtros.TabIndex = 5;
@@ -320,12 +320,12 @@ namespace FilterZERO
             // 
             // button2
             // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.BackColor = System.Drawing.Color.DarkOrange;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(6, 43);
+            this.button2.Location = new System.Drawing.Point(6, 172);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(196, 37);
             this.button2.TabIndex = 4;
@@ -335,12 +335,12 @@ namespace FilterZERO
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.DarkOrange;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(6, 6);
+            this.button1.Location = new System.Drawing.Point(6, 99);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(196, 37);
             this.button1.TabIndex = 1;

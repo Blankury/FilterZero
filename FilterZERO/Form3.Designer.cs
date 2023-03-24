@@ -39,17 +39,17 @@ namespace FilterZERO
             this.label2 = new System.Windows.Forms.Label();
             this.btnCapturar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cameraBox = new Emgu.CV.UI.ImageBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.cameraBox = new Emgu.CV.UI.ImageBox();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cameraBox)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -140,6 +140,15 @@ namespace FilterZERO
             this.panel3.Size = new System.Drawing.Size(347, 281);
             this.panel3.TabIndex = 0;
             // 
+            // cameraBox
+            // 
+            this.cameraBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cameraBox.Location = new System.Drawing.Point(15, 15);
+            this.cameraBox.Name = "cameraBox";
+            this.cameraBox.Size = new System.Drawing.Size(317, 251);
+            this.cameraBox.TabIndex = 2;
+            this.cameraBox.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gray;
@@ -184,15 +193,6 @@ namespace FilterZERO
             this.comboBox1.Size = new System.Drawing.Size(284, 21);
             this.comboBox1.TabIndex = 0;
             // 
-            // cameraBox
-            // 
-            this.cameraBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cameraBox.Location = new System.Drawing.Point(15, 15);
-            this.cameraBox.Name = "cameraBox";
-            this.cameraBox.Size = new System.Drawing.Size(317, 251);
-            this.cameraBox.TabIndex = 2;
-            this.cameraBox.TabStop = false;
-            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,9 +211,9 @@ namespace FilterZERO
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cameraBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cameraBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
