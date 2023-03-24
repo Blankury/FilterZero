@@ -28,11 +28,7 @@ namespace FilterZERO
         int contador, numLabels, t;
         string nombre, nombres = null;
 
-        private void Form3_Load(object sender, EventArgs e)
-        {
-
-        }
-
+    
         public Form3()
         {
             InitializeComponent();
@@ -72,27 +68,35 @@ namespace FilterZERO
         private void FrameProcedure(object sender, EventArgs e)
         {
             //Users.Add("");
-            Frame = camera.QueryFrame().Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
-            grayFace = Frame.Convert<Gray, Byte>();
-            MCvAvgComp[][] facesDetectedNow = grayFace.DetectHaarCascade(faceDetected, 1.2,10, Emgu.CV.CvEnum.HAAR_DETECTION_TYPE.DO_CANNY_PRUNING, new Size(20,20));
-            foreach (MCvAvgComp f in facesDetectedNow[0])
+            try
             {
-                result=Frame.Copy(f.rect).Convert<Gray, Byte>().Resize(100, 100, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
-                Frame.Draw(f.rect, new Bgr(Color.Green), 3);
 
-                if (trainingImages.ToArray().Length != 0)
+                Frame = camera.QueryFrame().Resize(320, 240, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
+                grayFace = Frame.Convert<Gray, Byte>();
+                MCvAvgComp[][] facesDetectedNow = grayFace.DetectHaarCascade(faceDetected, 1.2, 10, Emgu.CV.CvEnum.HAAR_DETECTION_TYPE.DO_CANNY_PRUNING, new Size(20, 20));
+                foreach (MCvAvgComp f in facesDetectedNow[0])
                 {
-                    MCvTermCriteria termCriterias = new MCvTermCriteria(contador, 0.001);
-                    EigenObjectRecognizer recognizer = new EigenObjectRecognizer(trainingImages.ToArray(), labels.ToArray(), 1500, ref termCriterias);
-                    nombre = recognizer.Recognize(result);
-                    Frame.Draw(Name, ref font, new Point(f.rect.X - 2, f.rect.Y - 2), new Bgr(Color.Red));
+                    result = Frame.Copy(f.rect).Convert<Gray, Byte>().Resize(100, 100, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
+                    Frame.Draw(f.rect, new Bgr(Color.Green), 3);
 
+                    if (trainingImages.ToArray().Length != 0)
+                    {
+                        MCvTermCriteria termCriterias = new MCvTermCriteria(contador, 0.001);
+                        EigenObjectRecognizer recognizer = new EigenObjectRecognizer(trainingImages.ToArray(), labels.ToArray(), 1500, ref termCriterias);
+                        nombre = recognizer.Recognize(result);
+                        Frame.Draw(Name, ref font, new Point(f.rect.X - 2, f.rect.Y - 2), new Bgr(Color.Red));
+
+
+                    }
 
                 }
-
+                cameraBox.Image = Frame;
+                nombres = "";
             }
-            cameraBox.Image = Frame;
-            nombres = "";
+            catch (Exception)
+            {
+                //
+            }
             
 
         }

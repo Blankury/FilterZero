@@ -71,9 +71,11 @@ namespace FilterZERO
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(453, 24);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(347, 426);
@@ -131,9 +133,11 @@ namespace FilterZERO
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.Gray;
             this.panel3.Controls.Add(this.cameraBox);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(15);
@@ -142,10 +146,13 @@ namespace FilterZERO
             // 
             // cameraBox
             // 
-            this.cameraBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cameraBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cameraBox.Location = new System.Drawing.Point(15, 15);
             this.cameraBox.Name = "cameraBox";
             this.cameraBox.Size = new System.Drawing.Size(317, 251);
+            this.cameraBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.cameraBox.TabIndex = 2;
             this.cameraBox.TabStop = false;
             // 
