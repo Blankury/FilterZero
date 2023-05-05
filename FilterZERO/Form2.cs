@@ -10,6 +10,10 @@ using System.Windows.Forms;
 using Emgu.CV;
 using Emgu.CV.Structure;
 
+using System.Drawing.Imaging;
+using FFmpeg.AutoGen;
+using System.Media;
+
 namespace FilterZERO
 {
     public partial class Form2 : Form
@@ -122,7 +126,12 @@ namespace FilterZERO
 
         private void ruidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            original = CurrentFrame;
+            original = CurrentFrame.ConvertTo();
+
+            Bitmap bitmap; //This is your bitmap
+            Image<Bgr, byte> imageCV = new Image<Bgr, byte>(bitmap); //Image Class from Emgu.CV
+            Mat mat = imageCV.Mat; //This is your Image converted to Mat
+
             int x = 0;
             int y = 0;
             int porcentaje = 90;

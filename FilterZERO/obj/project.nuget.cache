@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Xk/YIsPP5wIZwTD4ZpY0KWGhCMaictH6ggS68osgkKMMSxbXpyPmku+e6AzAIoaKwH8bnMOVQXxlp3JxfOz6vg==",
+  "dgSpecHash": "IelVYs33VK7xFxTcy6LH0OtCDGZjzRcMZm7JchT0Aps9eOhHAdzKNQA8HqufHBuVYpwgeC7WUEBRkurvqeGm/Q==",
   "success": true,
   "projectFilePath": "E:\\Eliza\\LMAD\\Procesamiento\\FilterZERO\\FilterZERO\\FilterZERO.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\beliz\\.nuget\\packages\\emgu.cv\\3.4.1.2976\\emgu.cv.3.4.1.2976.nupkg.sha512",
+    "C:\\Users\\beliz\\.nuget\\packages\\ffmpeg.autogen\\6.0.0\\ffmpeg.autogen.6.0.0.nupkg.sha512",
     "C:\\Users\\beliz\\.nuget\\packages\\zedgraph\\5.1.7\\zedgraph.5.1.7.nupkg.sha512"
   ],
   "logs": []

@@ -102,3 +102,133 @@ namespace FilterZERO
         //}
     }
 }
+
+public partial class Videos : Form
+{
+
+    string VideoActual = "";
+    string NombreVActual = "";
+    VideoCapture videoCapture;
+    bool Reproduciendo = false;
+    int framesTotales;
+    float framesActualNum;
+    Mat frameActual;
+    Bitmap bmpRes;
+    int FPS;
+    int filtro = 9;
+
+    private void btnCargarVideo_Click(object sender, EventArgs e)
+    {
+        OpenFileDialog openFileDialog = new OpenFileDialog();
+
+        if (openFileDialog.ShowDialog() == DialogResult.OK)
+        {
+            VideoActual = openFileDialog.FileName;
+            NombreVActual = openFileDialog.SafeFileName;
+        }
+
+    }
+
+    private async void PlayVideo()
+    {
+        if (videoCapture == null)
+        {
+            return;
+        }
+
+        try
+        {
+            while (Reproduciendo == true && framesActualNum < framesTotales)
+            {
+                videoCapture.Set(Emgu.CV.CvEnum.CapProp.PosFrames, framesActualNum);
+                videoCapture.Read(frameActual);
+
+                switch (filtro)
+                {
+                    case 0:
+                        bmpRes = InvertirColores(frameActual.ToBitmap());
+                        break;
+                    default:
+                        bmpRes = frameActual.ToBitmap();
+                        break;
+                }
+
+                VideoF2.Image = bmpRes;
+                VideoF2.SizeMode = PictureBoxSizeMode.StretchImage;
+                VideoF1.Image = frameActual.ToBitmap();
+                VideoF1.SizeMode = PictureBoxSizeMode.StretchImage;
+                LineaT.Value = (int)framesActualNum;
+                if (filtro >= 0 && filtro <= 4)
+                {
+                    framesActualNum += 2.5f;
+                }
+                else
+                {
+                    framesActualNum += 1.95f;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
+        }
+
+    }
+
+    unsafe public Bitmap InvertirColores(Bitmap bmap)
+    {
+        Bitmap imgOriginal;
+        imgOriginal = new Bitmap(bmap);
+        BitmapData bmpData = imgOriginal.LockBits(new Rectangle(0, 0, imgOriginal.Width, imgOriginal.Height), ImageLockMode.ReadWrite, imgOriginal.PixelFormat);
+        int bytesPerPixel = Bitmap.GetPixelFormatSize(imgOriginal.PixelFormat) / 8;
+        int heightInPixels = bmpData.Height;
+        int widthInBytes = bmpData.Width * bytesPerPixel;
+        byte* PtrFirstPixel = (byte*)bmpData.Scan0;
+
+        VarGau.Visible = false;
+        VarGau.Maximum = heightInPixels;
+        VarGau.Value = 0;
+
+        for (int y = 0; y < heightInPixels; y++)
+        {
+            byte* currentLine = PtrFirstPixel + (y * bmpData.Stride);
+            for (int x = 0; x < widthInBytes; x = x + bytesPerPixel)
+            {
+                currentLine[x] = (byte)(255 - currentLine[x]); // blue
+                currentLine[x + 1] = (byte)(255 - currentLine[x + 1]); // green
+                currentLine[x + 2] = (byte)(255 - currentLine[x + 2]); // red
+            }
+            VarGau.Value++;
+        }
+
+        imgOriginal.UnlockBits(bmpData);
+        VarGau.Visible = false;
+        return imgOriginal;
+    }
+
+    private void btnAplicarFiltroV_Click(object sender, EventArgs e)
+    {
+        int selectedIndex = cmbFiltrosV.SelectedIndex;
+        switch (selectedIndex)
+        {
+            case 0: //Invertir colores
+                filtro = 0;
+                break;
+            case 1: //Tono Sepia
+                filtro = 1;
+                break;
+            case 2: //Escala de Grises
+                filtro = 2;
+                break;
+            case 3: //Pixelizado
+                filtro = 3;
+                break;
+            case 4: //
+                filtro = 4;
+                break;
+            default:
+                MessageBox.Show("Por favor seleccione un filtro.");
+                break;
+        }
+    }
+}

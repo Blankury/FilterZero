@@ -19,6 +19,15 @@
           "build/EMGU.CV.targets": {}
         }
       },
+      "FFmpeg.AutoGen/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/FFmpeg.AutoGen.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FFmpeg.AutoGen.dll": {}
+        }
+      },
       "ZedGraph/5.1.7": {
         "type": "package",
         "compile": {
@@ -86,6 +95,15 @@
         },
         "build": {
           "build/EMGU.CV.targets": {}
+        }
+      },
+      "FFmpeg.AutoGen/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/FFmpeg.AutoGen.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FFmpeg.AutoGen.dll": {}
         }
       },
       "ZedGraph/5.1.7": {
@@ -157,6 +175,15 @@
           "build/EMGU.CV.targets": {}
         }
       },
+      "FFmpeg.AutoGen/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/FFmpeg.AutoGen.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FFmpeg.AutoGen.dll": {}
+        }
+      },
       "ZedGraph/5.1.7": {
         "type": "package",
         "compile": {
@@ -224,6 +251,15 @@
         },
         "build": {
           "build/EMGU.CV.targets": {}
+        }
+      },
+      "FFmpeg.AutoGen/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/FFmpeg.AutoGen.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FFmpeg.AutoGen.dll": {}
         }
       },
       "ZedGraph/5.1.7": {
@@ -305,6 +341,22 @@
         "lib/net35/Emgu.CV.World.xml"
       ]
     },
+    "FFmpeg.AutoGen/6.0.0": {
+      "sha512": "0fDNHJy9CPj6uf0SzAyuMi7eCMyPpcB5Sb9Cx9cJhqVZPgr8FarJ3ImWLYlXBosN7UcgWe9WvDIE7eLksS37Fg==",
+      "type": "package",
+      "path": "ffmpeg.autogen/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "ffmpeg.autogen.6.0.0.nupkg.sha512",
+        "ffmpeg.autogen.nuspec",
+        "lib/netstandard2.0/FFmpeg.AutoGen.dll",
+        "lib/netstandard2.0/FFmpeg.AutoGen.xml",
+        "lib/netstandard2.1/FFmpeg.AutoGen.dll",
+        "lib/netstandard2.1/FFmpeg.AutoGen.xml"
+      ]
+    },
     "ZedGraph/5.1.7": {
       "sha512": "TcZaInxUjYMJDWIaYvs/CgpssfVJQMqiry8GPP70klyheP4tYSQXFWi5HYwJvqao+epeUu3bsk3yDb3Nf/hVWw==",
       "type": "package",
@@ -335,7 +387,8 @@
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.2": [
-      "Emgu.CV >= 3.4.1.2976"
+      "Emgu.CV >= 3.4.1.2976",
+      "FFmpeg.AutoGen >= 6.0.0"
     ]
   },
   "packageFolders": {
@@ -374,6 +427,10 @@
           "Emgu.CV": {
             "target": "Package",
             "version": "[3.4.1.2976, )"
+          },
+          "FFmpeg.AutoGen": {
+            "target": "Package",
+            "version": "[6.0.0, )"
           }
         }
       }
