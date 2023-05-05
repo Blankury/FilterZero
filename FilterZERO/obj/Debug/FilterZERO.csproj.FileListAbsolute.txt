@@ -42,3 +42,6 @@ E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\bin\Debug\tr\ZedGraph.resource
 E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\bin\Debug\zh-cn\ZedGraph.resources.dll
 E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\bin\Debug\zh-tw\ZedGraph.resources.dll
 E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\obj\Debug\FilterZERO.exe.config
+E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\bin\Debug\Emgu.CV.dll
+E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\bin\Debug\Emgu.CV.Bitmap.dll
+E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\bin\Debug\System.Drawing.Common.dll

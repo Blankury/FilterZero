@@ -33,7 +33,6 @@ namespace FilterZERO
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargarImagenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.guardarImagenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filtrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,7 +72,6 @@ namespace FilterZERO
             // 
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cargarImagenToolStripMenuItem,
-            this.guardarImagenToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
@@ -82,20 +80,14 @@ namespace FilterZERO
             // cargarImagenToolStripMenuItem
             // 
             this.cargarImagenToolStripMenuItem.Name = "cargarImagenToolStripMenuItem";
-            this.cargarImagenToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.cargarImagenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cargarImagenToolStripMenuItem.Text = "Cargar video";
             this.cargarImagenToolStripMenuItem.Click += new System.EventHandler(this.cargarImagenToolStripMenuItem_Click);
-            // 
-            // guardarImagenToolStripMenuItem
-            // 
-            this.guardarImagenToolStripMenuItem.Name = "guardarImagenToolStripMenuItem";
-            this.guardarImagenToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.guardarImagenToolStripMenuItem.Text = "Guardar video";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Cerrar";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -267,7 +259,6 @@ namespace FilterZERO
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cargarImagenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem guardarImagenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem filtrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem colorizarToolStripMenuItem;

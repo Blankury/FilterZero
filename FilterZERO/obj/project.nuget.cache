@@ -1,12 +1,27 @@
 {
   "version": 2,
-  "dgSpecHash": "IelVYs33VK7xFxTcy6LH0OtCDGZjzRcMZm7JchT0Aps9eOhHAdzKNQA8HqufHBuVYpwgeC7WUEBRkurvqeGm/Q==",
+  "dgSpecHash": "iP80mXKKkF8m+06Z6nKHsNWyl+n29mMh+P7nNKmxYAaEjP2LgoHoF8uZrpITo53nYoI7uafUWYlQ4uxuAs93Ew==",
   "success": true,
   "projectFilePath": "E:\\Eliza\\LMAD\\Procesamiento\\FilterZERO\\FilterZERO\\FilterZERO.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\beliz\\.nuget\\packages\\emgu.cv\\3.4.1.2976\\emgu.cv.3.4.1.2976.nupkg.sha512",
-    "C:\\Users\\beliz\\.nuget\\packages\\ffmpeg.autogen\\6.0.0\\ffmpeg.autogen.6.0.0.nupkg.sha512",
+    "C:\\Users\\beliz\\.nuget\\packages\\emgu.cv.bitmap\\4.4.0.4061\\emgu.cv.bitmap.4.4.0.4061.nupkg.sha512",
+    "C:\\Users\\beliz\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
     "C:\\Users\\beliz\\.nuget\\packages\\zedgraph\\5.1.7\\zedgraph.5.1.7.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Degradación del paquete detectada: Emgu.CV de 4.4.0 a 3.4.1.2976. Haga referencia al paquete directamente desde el proyecto para seleccionar una versión diferente. \r\n FilterZERO -> Emgu.CV.Bitmap 4.4.0.4061 -> Emgu.CV (>= 4.4.0 && < 4.4.1) \r\n FilterZERO -> EMGU.CV (>= 3.4.1.2976)",
+      "libraryId": "Emgu.CV",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win",
+        ".NETFramework,Version=v4.7.2/win-x64",
+        ".NETFramework,Version=v4.7.2/win-x86"
+      ]
+    }
+  ]
 }

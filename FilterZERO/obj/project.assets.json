@@ -19,13 +19,31 @@
           "build/EMGU.CV.targets": {}
         }
       },
-      "FFmpeg.AutoGen/6.0.0": {
+      "Emgu.CV.Bitmap/4.4.0.4061": {
         "type": "package",
+        "dependencies": {
+          "Emgu.CV": "[4.4.0, 4.4.1)",
+          "System.Drawing.Common": "4.7.0"
+        },
         "compile": {
-          "lib/netstandard2.0/FFmpeg.AutoGen.dll": {}
+          "lib/netstandard2.0/Emgu.CV.Bitmap.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/FFmpeg.AutoGen.dll": {}
+          "lib/netstandard2.0/Emgu.CV.Bitmap.dll": {}
+        }
+      },
+      "System.Drawing.Common/4.7.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "System.Drawing",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.Drawing.Common.dll": {}
         }
       },
       "ZedGraph/5.1.7": {
@@ -97,13 +115,31 @@
           "build/EMGU.CV.targets": {}
         }
       },
-      "FFmpeg.AutoGen/6.0.0": {
+      "Emgu.CV.Bitmap/4.4.0.4061": {
         "type": "package",
+        "dependencies": {
+          "Emgu.CV": "[4.4.0, 4.4.1)",
+          "System.Drawing.Common": "4.7.0"
+        },
         "compile": {
-          "lib/netstandard2.0/FFmpeg.AutoGen.dll": {}
+          "lib/netstandard2.0/Emgu.CV.Bitmap.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/FFmpeg.AutoGen.dll": {}
+          "lib/netstandard2.0/Emgu.CV.Bitmap.dll": {}
+        }
+      },
+      "System.Drawing.Common/4.7.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "System.Drawing",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.Drawing.Common.dll": {}
         }
       },
       "ZedGraph/5.1.7": {
@@ -175,13 +211,31 @@
           "build/EMGU.CV.targets": {}
         }
       },
-      "FFmpeg.AutoGen/6.0.0": {
+      "Emgu.CV.Bitmap/4.4.0.4061": {
         "type": "package",
+        "dependencies": {
+          "Emgu.CV": "[4.4.0, 4.4.1)",
+          "System.Drawing.Common": "4.7.0"
+        },
         "compile": {
-          "lib/netstandard2.0/FFmpeg.AutoGen.dll": {}
+          "lib/netstandard2.0/Emgu.CV.Bitmap.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/FFmpeg.AutoGen.dll": {}
+          "lib/netstandard2.0/Emgu.CV.Bitmap.dll": {}
+        }
+      },
+      "System.Drawing.Common/4.7.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "System.Drawing",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.Drawing.Common.dll": {}
         }
       },
       "ZedGraph/5.1.7": {
@@ -253,13 +307,31 @@
           "build/EMGU.CV.targets": {}
         }
       },
-      "FFmpeg.AutoGen/6.0.0": {
+      "Emgu.CV.Bitmap/4.4.0.4061": {
         "type": "package",
+        "dependencies": {
+          "Emgu.CV": "[4.4.0, 4.4.1)",
+          "System.Drawing.Common": "4.7.0"
+        },
         "compile": {
-          "lib/netstandard2.0/FFmpeg.AutoGen.dll": {}
+          "lib/netstandard2.0/Emgu.CV.Bitmap.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/FFmpeg.AutoGen.dll": {}
+          "lib/netstandard2.0/Emgu.CV.Bitmap.dll": {}
+        }
+      },
+      "System.Drawing.Common/4.7.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "System.Drawing",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.Drawing.Common.dll": {}
         }
       },
       "ZedGraph/5.1.7": {
@@ -341,20 +413,58 @@
         "lib/net35/Emgu.CV.World.xml"
       ]
     },
-    "FFmpeg.AutoGen/6.0.0": {
-      "sha512": "0fDNHJy9CPj6uf0SzAyuMi7eCMyPpcB5Sb9Cx9cJhqVZPgr8FarJ3ImWLYlXBosN7UcgWe9WvDIE7eLksS37Fg==",
+    "Emgu.CV.Bitmap/4.4.0.4061": {
+      "sha512": "685LZD7Ix6I9Wl2ewVuI+SaITWJAoUY0oOLNYZXo8mf1dRPiIq9XhZHIYDoougZN3qKpHrqKmO2BBJs5xZKxvw==",
       "type": "package",
-      "path": "ffmpeg.autogen/6.0.0",
+      "path": "emgu.cv.bitmap/4.4.0.4061",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.txt",
-        "ffmpeg.autogen.6.0.0.nupkg.sha512",
-        "ffmpeg.autogen.nuspec",
-        "lib/netstandard2.0/FFmpeg.AutoGen.dll",
-        "lib/netstandard2.0/FFmpeg.AutoGen.xml",
-        "lib/netstandard2.1/FFmpeg.AutoGen.dll",
-        "lib/netstandard2.1/FFmpeg.AutoGen.xml"
+        "emgu.cv.bitmap.4.4.0.4061.nupkg.sha512",
+        "emgu.cv.bitmap.nuspec",
+        "icon.png",
+        "lib/netstandard2.0/Emgu.CV.Bitmap.dll",
+        "lib/netstandard2.0/Emgu.CV.Bitmap.xml"
+      ]
+    },
+    "System.Drawing.Common/4.7.0": {
+      "sha512": "v+XbyYHaZjDfn0ENmJEV1VYLgGgCTx1gnfOBcppowbpOAriglYgGCvFCPr2EEZyBvXlpxbEsTwkOlInl107ahA==",
+      "type": "package",
+      "path": "system.drawing.common/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.Drawing.Common.dll",
+        "lib/netstandard2.0/System.Drawing.Common.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.Drawing.Common.dll",
+        "ref/netcoreapp3.0/System.Drawing.Common.dll",
+        "ref/netcoreapp3.0/System.Drawing.Common.xml",
+        "ref/netstandard2.0/System.Drawing.Common.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll",
+        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.xml",
+        "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.xml",
+        "system.drawing.common.4.7.0.nupkg.sha512",
+        "system.drawing.common.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "ZedGraph/5.1.7": {
@@ -388,7 +498,7 @@
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.2": [
       "Emgu.CV >= 3.4.1.2976",
-      "FFmpeg.AutoGen >= 6.0.0"
+      "Emgu.CV.Bitmap >= 4.4.0.4061"
     ]
   },
   "packageFolders": {
@@ -428,9 +538,9 @@
             "target": "Package",
             "version": "[3.4.1.2976, )"
           },
-          "FFmpeg.AutoGen": {
+          "Emgu.CV.Bitmap": {
             "target": "Package",
-            "version": "[6.0.0, )"
+            "version": "[4.4.0.4061, )"
           }
         }
       }
@@ -446,5 +556,20 @@
         "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Degradación del paquete detectada: Emgu.CV de 4.4.0 a 3.4.1.2976. Haga referencia al paquete directamente desde el proyecto para seleccionar una versión diferente. \r\n FilterZERO -> Emgu.CV.Bitmap 4.4.0.4061 -> Emgu.CV (>= 4.4.0 && < 4.4.1) \r\n FilterZERO -> EMGU.CV (>= 3.4.1.2976)",
+      "libraryId": "Emgu.CV",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win",
+        ".NETFramework,Version=v4.7.2/win-x64",
+        ".NETFramework,Version=v4.7.2/win-x86"
+      ]
+    }
+  ]
 }
