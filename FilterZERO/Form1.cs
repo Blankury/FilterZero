@@ -18,11 +18,14 @@ namespace FilterZERO
         private Bitmap apilado;
         private string rutaAux;
         private int[] histograma = new int[256];
+        private int[] histogramaR = new int[256];
+        private int[] histogramaG = new int[256];
+        private int[] histogramaB = new int[256];
         private int[,] conv3x3 = new int[3, 3];
         private int factor;
         private int offset;
         private int porcentaje;
-
+        int contraste;
 
         //variables para double buffer evitar el flicker
         //flicker:
@@ -204,47 +207,7 @@ namespace FilterZERO
 
         private void contrasteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //diferenciar entre areas mas iluminadas y más oscuras
-            int contraste = 20; //el valor va de -100 a 100
-            float c = (100.0f + contraste) / 100.0f;
-            c *= c;
-            int x = 0;
-            int y = 0;
-
-            Color rColor = new Color();
-            Color oColor = new Color();
-
-            float r = 0;
-            float g = 0;
-            float b = 0;
-
-            for (x =0; x < apilado.Width; x++)
-            {
-                for (y = 0; y < apilado.Height; y++)
-                {
-                    //Get pixel color
-                    oColor = apilado.GetPixel(x, y);
-                    //process and get the new colorxdd le salia el ingles de repente
-                    r = ((((oColor.R / 255.0f) - 0.5f) * c) + 0.5f) * 255;
-                    if (r > 255) r = 255;
-                    if (r < 0) r = 0;
-
-                    g = ((((oColor.G / 255.0f) - 0.5f) * c) + 0.5f) * 255;
-                    if (g > 255) g = 255;
-                    if (g < 0) g = 0;
-
-                    b = ((((oColor.B / 255.0f) - 0.5f) * c) + 0.5f) * 255;
-                    if (b > 255) b = 255;
-                    if (b < 0) b = 0;
-
-                    rColor = Color.FromArgb((int)r, (int)g, (int)b);
-                    resultado.SetPixel(x, y, rColor);
-                }
-            }
-
-
-            pictureBox1.Image = resultado;
-            apilado = resultado;
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -254,6 +217,7 @@ namespace FilterZERO
 
             int x = 0;
             int y = 0;
+
             Color rColor = new Color(); //color que resulta
 
             for (x = 0; x < resultado.Width; x++)
@@ -267,8 +231,6 @@ namespace FilterZERO
             }
             Form4 NewWindow = new Form4(histograma);
             NewWindow.ShowDialog();
-
-            //suavizado del histograma
         }
 
         private void tonosDeGrisToolStripMenuItem_Click(object sender, EventArgs e)
@@ -309,11 +271,12 @@ namespace FilterZERO
                 {
                     //get pixel color
                     rColor = resultado.GetPixel(x, y);
-                    histograma[rColor.R]++;
+                    histogramaR[rColor.R]++; histogramaG[rColor.G]++;histogramaB[rColor.B]++;
+
                     resultado.SetPixel(x, y, rColor);
                 }
             }
-            Form4 NewWindow = new Form4(histograma);
+            Form4 NewWindow = new Form4(histogramaR, histogramaG, histogramaB);
             NewWindow.ShowDialog();
 
             //suavizado del histograma
@@ -419,6 +382,64 @@ namespace FilterZERO
             fRuido(sender, e, porcentaje);
         }
 
+        private void fContrast(object sender, EventArgs e, int Sporcentaje)
+        {
+            //diferenciar entre areas mas iluminadas y más oscuras
+            //el valor va de -100 a 100
+            float c = (100.0f + contraste) / 100.0f;
+            c *= c;
+            int x = 0;
+            int y = 0;
+
+            Color rColor = new Color();
+            Color oColor = new Color();
+
+            float r = 0;
+            float g = 0;
+            float b = 0;
+
+            for (x = 0; x < apilado.Width; x++)
+            {
+                for (y = 0; y < apilado.Height; y++)
+                {
+                    //Get pixel color
+                    oColor = apilado.GetPixel(x, y);
+                    //process and get the new colorxdd le salia el ingles de repente
+                    r = ((((oColor.R / 255.0f) - 0.5f) * c) + 0.5f) * 255;
+                    if (r > 255) r = 255;
+                    if (r < 0) r = 0;
+
+                    g = ((((oColor.G / 255.0f) - 0.5f) * c) + 0.5f) * 255;
+                    if (g > 255) g = 255;
+                    if (g < 0) g = 0;
+
+                    b = ((((oColor.B / 255.0f) - 0.5f) * c) + 0.5f) * 255;
+                    if (b > 255) b = 255;
+                    if (b < 0) b = 0;
+
+                    rColor = Color.FromArgb((int)r, (int)g, (int)b);
+                    resultado.SetPixel(x, y, rColor);
+                }
+            }
+
+
+            pictureBox1.Image = resultado;
+            apilado = resultado;
+        }
+
+
+        private void toolStripMenuItem8_Click(object sender, EventArgs e)
+        {
+            contraste = -50;
+            fContrast(sender, e, contraste);
+        }
+
+        private void toolStripMenuItem11_Click(object sender, EventArgs e)
+        {
+            contraste = 50;
+            fContrast(sender, e, contraste);
+        }
+
         private void Borrar_Filtros_Click_1(object sender, EventArgs e)
         {
             //cargar la misma imagen de antes desde la ruta guardada
@@ -428,7 +449,5 @@ namespace FilterZERO
             pictureBox1.Image = original;
 
         }
-
-        
     }
 }

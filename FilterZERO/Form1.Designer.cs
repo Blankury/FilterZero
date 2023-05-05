@@ -39,8 +39,6 @@ namespace FilterZERO
             this.colorizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contrasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
             this.invertirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mosaicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -130,7 +128,7 @@ namespace FilterZERO
             // colorizarToolStripMenuItem
             // 
             this.colorizarToolStripMenuItem.Name = "colorizarToolStripMenuItem";
-            this.colorizarToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.colorizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.colorizarToolStripMenuItem.Text = "Colorizar";
             this.colorizarToolStripMenuItem.Click += new System.EventHandler(this.colorizarToolStripMenuItem_Click);
             // 
@@ -138,49 +136,36 @@ namespace FilterZERO
             // 
             this.contrasteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem8,
-            this.toolStripMenuItem10,
-            this.toolStripMenuItem9,
             this.toolStripMenuItem11});
             this.contrasteToolStripMenuItem.Name = "contrasteToolStripMenuItem";
-            this.contrasteToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.contrasteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.contrasteToolStripMenuItem.Text = "Contraste";
-            this.contrasteToolStripMenuItem.Click += new System.EventHandler(this.contrasteToolStripMenuItem_Click);
             // 
             // toolStripMenuItem8
             // 
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(91, 22);
-            this.toolStripMenuItem8.Text = "-10";
-            // 
-            // toolStripMenuItem10
-            // 
-            this.toolStripMenuItem10.Name = "toolStripMenuItem10";
-            this.toolStripMenuItem10.Size = new System.Drawing.Size(91, 22);
-            this.toolStripMenuItem10.Text = "-20";
-            // 
-            // toolStripMenuItem9
-            // 
-            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-            this.toolStripMenuItem9.Size = new System.Drawing.Size(91, 22);
-            this.toolStripMenuItem9.Text = "10";
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem8.Text = "-50";
+            this.toolStripMenuItem8.Click += new System.EventHandler(this.toolStripMenuItem8_Click);
             // 
             // toolStripMenuItem11
             // 
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(91, 22);
-            this.toolStripMenuItem11.Text = "20";
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem11.Text = "50";
+            this.toolStripMenuItem11.Click += new System.EventHandler(this.toolStripMenuItem11_Click);
             // 
             // invertirToolStripMenuItem
             // 
             this.invertirToolStripMenuItem.Name = "invertirToolStripMenuItem";
-            this.invertirToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.invertirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.invertirToolStripMenuItem.Text = "Invertir";
             this.invertirToolStripMenuItem.Click += new System.EventHandler(this.invertirToolStripMenuItem_Click);
             // 
             // mosaicoToolStripMenuItem
             // 
             this.mosaicoToolStripMenuItem.Name = "mosaicoToolStripMenuItem";
-            this.mosaicoToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.mosaicoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mosaicoToolStripMenuItem.Text = "Mosaico";
             this.mosaicoToolStripMenuItem.Click += new System.EventHandler(this.mosaicoToolStripMenuItem_Click);
             // 
@@ -194,7 +179,7 @@ namespace FilterZERO
             this.ruido75,
             this.ruido90});
             this.ruidoToolStripMenuItem.Name = "ruidoToolStripMenuItem";
-            this.ruidoToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.ruidoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ruidoToolStripMenuItem.Text = "Ruido";
             // 
             // ruido15
@@ -242,7 +227,7 @@ namespace FilterZERO
             // tonosDeGrisToolStripMenuItem
             // 
             this.tonosDeGrisToolStripMenuItem.Name = "tonosDeGrisToolStripMenuItem";
-            this.tonosDeGrisToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.tonosDeGrisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tonosDeGrisToolStripMenuItem.Text = "Tonos de gris";
             this.tonosDeGrisToolStripMenuItem.Click += new System.EventHandler(this.tonosDeGrisToolStripMenuItem_Click);
             // 
@@ -401,8 +386,6 @@ namespace FilterZERO
         private System.Windows.Forms.ToolStripMenuItem ruido75;
         private System.Windows.Forms.ToolStripMenuItem ruido90;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem11;
         private System.Windows.Forms.ToolStripMenuItem tonosDeGrisToolStripMenuItem;
         private System.Windows.Forms.Button button2;

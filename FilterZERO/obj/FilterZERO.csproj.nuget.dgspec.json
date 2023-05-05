@@ -32,7 +32,14 @@
         }
       },
       "frameworks": {
-        "net472": {}
+        "net472": {
+          "dependencies": {
+            "Emgu.CV": {
+              "target": "Package",
+              "version": "[3.4.1.2976, )"
+            }
+          }
+        }
       },
       "runtimes": {
         "win": {
