@@ -45,3 +45,6 @@ E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\obj\Debug\FilterZERO.exe.confi
 E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\bin\Debug\Emgu.CV.dll
 E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\bin\Debug\Emgu.CV.Bitmap.dll
 E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\bin\Debug\System.Drawing.Common.dll
+E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\bin\Debug\AForge.dll
+E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\bin\Debug\AForge.Video.dll
+E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\bin\Debug\AForge.Video.DirectShow.dll

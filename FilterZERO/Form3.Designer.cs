@@ -29,7 +29,6 @@ namespace FilterZERO
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,16 +38,16 @@ namespace FilterZERO
             this.label2 = new System.Windows.Forms.Label();
             this.btnCapturar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.cameraBox = new Emgu.CV.UI.ImageBox();
+            this.CameraBox = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbCameras = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cameraBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CameraBox)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +67,7 @@ namespace FilterZERO
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.archivoToolStripMenuItem.Text = "Cerrar";
+            this.archivoToolStripMenuItem.Click += new System.EventHandler(this.archivoToolStripMenuItem_Click);
             // 
             // panel2
             // 
@@ -86,7 +86,6 @@ namespace FilterZERO
             this.panel4.BackColor = System.Drawing.Color.Gray;
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.btnCapturar);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 326);
             this.panel4.Name = "panel4";
@@ -119,11 +118,10 @@ namespace FilterZERO
             // btnCapturar
             // 
             this.btnCapturar.BackColor = System.Drawing.Color.Orange;
-            this.btnCapturar.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnCapturar.FlatAppearance.BorderSize = 0;
             this.btnCapturar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCapturar.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapturar.Location = new System.Drawing.Point(25, 25);
+            this.btnCapturar.Location = new System.Drawing.Point(147, 113);
             this.btnCapturar.Name = "btnCapturar";
             this.btnCapturar.Size = new System.Drawing.Size(122, 50);
             this.btnCapturar.TabIndex = 4;
@@ -137,31 +135,31 @@ namespace FilterZERO
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.Gray;
-            this.panel3.Controls.Add(this.cameraBox);
+            this.panel3.Controls.Add(this.CameraBox);
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(15);
             this.panel3.Size = new System.Drawing.Size(347, 281);
             this.panel3.TabIndex = 0;
             // 
-            // cameraBox
+            // CameraBox
             // 
-            this.cameraBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cameraBox.Location = new System.Drawing.Point(15, 15);
-            this.cameraBox.Name = "cameraBox";
-            this.cameraBox.Size = new System.Drawing.Size(317, 251);
-            this.cameraBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.cameraBox.TabIndex = 2;
-            this.cameraBox.TabStop = false;
+            this.CameraBox.BackColor = System.Drawing.Color.Black;
+            this.CameraBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CameraBox.Location = new System.Drawing.Point(15, 15);
+            this.CameraBox.Name = "CameraBox";
+            this.CameraBox.Size = new System.Drawing.Size(317, 251);
+            this.CameraBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CameraBox.TabIndex = 0;
+            this.CameraBox.TabStop = false;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gray;
             this.panel1.Controls.Add(this.listBox1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.btnCapturar);
+            this.panel1.Controls.Add(this.cmbCameras);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
@@ -171,9 +169,9 @@ namespace FilterZERO
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(65, 129);
+            this.listBox1.Location = new System.Drawing.Point(65, 259);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(284, 277);
+            this.listBox1.Size = new System.Drawing.Size(300, 147);
             this.listBox1.TabIndex = 2;
             // 
             // label1
@@ -189,16 +187,16 @@ namespace FilterZERO
             this.label1.TabIndex = 1;
             this.label1.Text = "Cámaras disponibles";
             // 
-            // comboBox1
+            // cmbCameras
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cmbCameras.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(65, 60);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(284, 21);
-            this.comboBox1.TabIndex = 0;
+            this.cmbCameras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbCameras.FormattingEnabled = true;
+            this.cmbCameras.Location = new System.Drawing.Point(65, 60);
+            this.cmbCameras.Name = "cmbCameras";
+            this.cmbCameras.Size = new System.Drawing.Size(284, 21);
+            this.cmbCameras.TabIndex = 0;
             // 
             // Form3
             // 
@@ -212,13 +210,15 @@ namespace FilterZERO
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form3";
             this.Text = "FilterZero - Cámara";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form3_FormClosing);
+            this.Load += new System.EventHandler(this.Form3_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cameraBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CameraBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -235,11 +235,11 @@ namespace FilterZERO
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbCameras;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCapturar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox listBox1;
-        private Emgu.CV.UI.ImageBox cameraBox;
+        private System.Windows.Forms.PictureBox CameraBox;
     }
 }

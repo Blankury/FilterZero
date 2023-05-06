@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "iP80mXKKkF8m+06Z6nKHsNWyl+n29mMh+P7nNKmxYAaEjP2LgoHoF8uZrpITo53nYoI7uafUWYlQ4uxuAs93Ew==",
+  "dgSpecHash": "FwHwIrHwoFTXAsy6cr7apHK9XNsyQoI8LbvK4n0NkEOzRjHNYFNqJQcgQgdXmWaOz4Utnv/1kVO/HZlGz99h4g==",
   "success": true,
   "projectFilePath": "E:\\Eliza\\LMAD\\Procesamiento\\FilterZERO\\FilterZERO\\FilterZERO.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\beliz\\.nuget\\packages\\aforge\\2.2.5\\aforge.2.2.5.nupkg.sha512",
+    "C:\\Users\\beliz\\.nuget\\packages\\aforge.video\\2.2.5\\aforge.video.2.2.5.nupkg.sha512",
+    "C:\\Users\\beliz\\.nuget\\packages\\aforge.video.directshow\\2.2.5\\aforge.video.directshow.2.2.5.nupkg.sha512",
     "C:\\Users\\beliz\\.nuget\\packages\\emgu.cv\\3.4.1.2976\\emgu.cv.3.4.1.2976.nupkg.sha512",
     "C:\\Users\\beliz\\.nuget\\packages\\emgu.cv.bitmap\\4.4.0.4061\\emgu.cv.bitmap.4.4.0.4061.nupkg.sha512",
     "C:\\Users\\beliz\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",

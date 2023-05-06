@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Emgu.CV;
@@ -32,6 +27,11 @@ namespace FilterZERO
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            IsPlaying = false;
+            CurrentFrameNo = 0;
+            trackBar1.Value = 0;
+            pictureBox1.Image = null;
+            pictureBox1.Invalidate();
             this.Close();
         }
 
@@ -242,7 +242,7 @@ namespace FilterZERO
                     g = (int)(miColor.G * gc);
                     b = (int)(miColor.B * bc);
 
-                    original.SetPixel(x, y, Color.FromArgb(r, g, b));
+                    current.SetPixel(x, y, Color.FromArgb(r, g, b));
                 }
             }
 
