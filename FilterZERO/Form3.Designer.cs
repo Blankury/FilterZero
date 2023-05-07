@@ -32,49 +32,52 @@ namespace FilterZERO
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.numFaces = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.CameraBox2 = new Emgu.CV.UI.ImageBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.CameraBox1 = new Emgu.CV.UI.ImageBox();
             this.btnCapturar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDetect = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbCameras = new System.Windows.Forms.ComboBox();
+            this.btnPause = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.CameraBox2 = new Emgu.CV.UI.ImageBox();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CameraBox2)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CameraBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CameraBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Orange;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.archivoToolStripMenuItem});
+            this.cerrarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // archivoToolStripMenuItem
+            // cerrarToolStripMenuItem
             // 
-            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
-            this.archivoToolStripMenuItem.Text = "Cerrar";
-            this.archivoToolStripMenuItem.Click += new System.EventHandler(this.archivoToolStripMenuItem_Click);
+            this.cerrarToolStripMenuItem.Name = "cerrarToolStripMenuItem";
+            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.cerrarToolStripMenuItem.Text = "Cerrar";
+            this.cerrarToolStripMenuItem.Click += new System.EventHandler(this.archivoToolStripMenuItem_Click);
             // 
             // panel2
             // 
@@ -145,16 +148,6 @@ namespace FilterZERO
             this.panel6.Size = new System.Drawing.Size(184, 251);
             this.panel6.TabIndex = 2;
             // 
-            // CameraBox2
-            // 
-            this.CameraBox2.BackColor = System.Drawing.Color.Black;
-            this.CameraBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CameraBox2.Location = new System.Drawing.Point(0, 0);
-            this.CameraBox2.Name = "CameraBox2";
-            this.CameraBox2.Size = new System.Drawing.Size(184, 251);
-            this.CameraBox2.TabIndex = 2;
-            this.CameraBox2.TabStop = false;
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.CameraBox1);
@@ -181,7 +174,7 @@ namespace FilterZERO
             this.btnCapturar.FlatAppearance.BorderSize = 0;
             this.btnCapturar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCapturar.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapturar.Location = new System.Drawing.Point(135, 119);
+            this.btnCapturar.Location = new System.Drawing.Point(65, 108);
             this.btnCapturar.Name = "btnCapturar";
             this.btnCapturar.Size = new System.Drawing.Size(122, 50);
             this.btnCapturar.TabIndex = 4;
@@ -192,6 +185,9 @@ namespace FilterZERO
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gray;
+            this.panel1.Controls.Add(this.btnAgregar);
+            this.panel1.Controls.Add(this.btnPause);
+            this.panel1.Controls.Add(this.btnDetect);
             this.panel1.Controls.Add(this.listBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnCapturar);
@@ -201,6 +197,20 @@ namespace FilterZERO
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(393, 426);
             this.panel1.TabIndex = 5;
+            // 
+            // btnDetect
+            // 
+            this.btnDetect.BackColor = System.Drawing.Color.Orange;
+            this.btnDetect.FlatAppearance.BorderSize = 0;
+            this.btnDetect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetect.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetect.Location = new System.Drawing.Point(194, 108);
+            this.btnDetect.Name = "btnDetect";
+            this.btnDetect.Size = new System.Drawing.Size(122, 50);
+            this.btnDetect.TabIndex = 5;
+            this.btnDetect.Text = "Detectar";
+            this.btnDetect.UseVisualStyleBackColor = false;
+            this.btnDetect.Click += new System.EventHandler(this.btnDetect_Click);
             // 
             // listBox1
             // 
@@ -234,6 +244,44 @@ namespace FilterZERO
             this.cmbCameras.Size = new System.Drawing.Size(251, 21);
             this.cmbCameras.TabIndex = 0;
             // 
+            // btnPause
+            // 
+            this.btnPause.BackColor = System.Drawing.Color.Orange;
+            this.btnPause.FlatAppearance.BorderSize = 0;
+            this.btnPause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPause.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPause.Location = new System.Drawing.Point(65, 164);
+            this.btnPause.Name = "btnPause";
+            this.btnPause.Size = new System.Drawing.Size(122, 50);
+            this.btnPause.TabIndex = 6;
+            this.btnPause.Text = "Pause";
+            this.btnPause.UseVisualStyleBackColor = false;
+            this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.Orange;
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Location = new System.Drawing.Point(194, 164);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(122, 50);
+            this.btnAgregar.TabIndex = 7;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            // 
+            // CameraBox2
+            // 
+            this.CameraBox2.BackColor = System.Drawing.Color.Black;
+            this.CameraBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CameraBox2.Location = new System.Drawing.Point(0, 0);
+            this.CameraBox2.Name = "CameraBox2";
+            this.CameraBox2.Size = new System.Drawing.Size(184, 251);
+            this.CameraBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.CameraBox2.TabIndex = 2;
+            this.CameraBox2.TabStop = false;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,11 +303,11 @@ namespace FilterZERO
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.CameraBox2)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CameraBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CameraBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,7 +316,7 @@ namespace FilterZERO
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cerrarToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
@@ -281,7 +329,10 @@ namespace FilterZERO
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
-        private Emgu.CV.UI.ImageBox CameraBox2;
         private Emgu.CV.UI.ImageBox CameraBox1;
+        private System.Windows.Forms.Button btnDetect;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnPause;
+        private Emgu.CV.UI.ImageBox CameraBox2;
     }
 }

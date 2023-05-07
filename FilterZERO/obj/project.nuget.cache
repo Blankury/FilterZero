@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1koxTPU80gUdbZkWEsyEnz1sCbg8sc8nzNRoCzu0U6inaILa9UFm7FTF/L/1nDZZ3/xYJMvBYZShrlOFXnD2EQ==",
+  "dgSpecHash": "tvyN6Tot93TtvRfkJ/YHDS13uSkVS2313ZlMJlEX2V2cODH3zxMg+eCDYnpnWBATHaZ5Ry2n1p3K9tPUeBqfdA==",
   "success": true,
   "projectFilePath": "E:\\Eliza\\LMAD\\Procesamiento\\FilterZERO\\FilterZERO\\FilterZERO.csproj",
   "expectedPackageFiles": [
@@ -8,8 +8,8 @@
     "C:\\Users\\beliz\\.nuget\\packages\\aforge.video\\2.2.5\\aforge.video.2.2.5.nupkg.sha512",
     "C:\\Users\\beliz\\.nuget\\packages\\aforge.video.directshow\\2.2.5\\aforge.video.directshow.2.2.5.nupkg.sha512",
     "C:\\Users\\beliz\\.nuget\\packages\\emgu.cv\\3.4.3.3016\\emgu.cv.3.4.3.3016.nupkg.sha512",
-    "C:\\Users\\beliz\\.nuget\\packages\\emgu.cv.bitmap\\4.4.0.4061\\emgu.cv.bitmap.4.4.0.4061.nupkg.sha512",
-    "C:\\Users\\beliz\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
+    "C:\\Users\\beliz\\.nuget\\packages\\emgu.cv.bitmap\\4.7.0.5276\\emgu.cv.bitmap.4.7.0.5276.nupkg.sha512",
+    "C:\\Users\\beliz\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
     "C:\\Users\\beliz\\.nuget\\packages\\zedgraph\\5.1.7\\zedgraph.5.1.7.nupkg.sha512"
   ],
   "logs": [
@@ -17,7 +17,7 @@
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Degradación del paquete detectada: Emgu.CV de 4.4.0 a 3.4.3.3016. Haga referencia al paquete directamente desde el proyecto para seleccionar una versión diferente. \r\n FilterZERO -> Emgu.CV.Bitmap 4.4.0.4061 -> Emgu.CV (>= 4.4.0 && < 4.4.1) \r\n FilterZERO -> EMGU.CV (>= 3.4.3.3016)",
+      "message": "Degradación del paquete detectada: Emgu.CV de 4.7.0.5276 a 3.4.3.3016. Haga referencia al paquete directamente desde el proyecto para seleccionar una versión diferente. \r\n FilterZERO -> Emgu.CV.Bitmap 4.7.0.5276 -> Emgu.CV (>= 4.7.0.5276) \r\n FilterZERO -> EMGU.CV (>= 3.4.3.3016)",
       "libraryId": "Emgu.CV",
       "targetGraphs": [
         ".NETFramework,Version=v4.7.2",

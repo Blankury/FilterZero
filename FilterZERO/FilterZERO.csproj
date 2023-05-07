@@ -142,7 +142,7 @@
       <Version>3.4.3.3016</Version>
     </PackageReference>
     <PackageReference Include="Emgu.CV.Bitmap">
-      <Version>4.4.0.4061</Version>
+      <Version>4.7.0.5276</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

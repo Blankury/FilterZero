@@ -18,38 +18,15 @@ namespace FilterZERO
         Mat m1 = new Mat();
         System.Timers.Timer aTimer = new System.Timers.Timer();
         System.Timers.Timer hTimer = new System.Timers.Timer();
-
         VideoCapture capture;
         bool pause = false;
         bool haarDetect = false;
-        bool lbpDetect = false;
 
-        int X = 0, Y = 0;
+        int faceCount = 0;
 
         Image<Bgr, Byte> m_cam;
 
-        //VideoCaptureDevice camara;
         FilterInfoCollection filterInfoCollection;
-        //Mat m1 = new Mat();
-        //public string FaceName;
-
-        ////private List<Rectangle> faceRectangles = new List<Rectangle>();
-        //int faceCount = 0;
-        //private Image<Rgb, byte> bgrFrame = null;
-        //private Image<Gray, Byte> detectedFace = null;
-
-        //Mat m1 = new Mat();
-        //System.Timers.Timer aTimer = new System.Timers.Timer();
-        //System.Timers.Timer hTimer = new System.Timers.Timer();
-
-        //VideoCapture capture;
-        //bool pause = false;
-        //bool haarDetect = false;
-        //bool lbpDetect = false;
-
-        //int X = 0, Y = 0;
-
-        //Image<Bgr, Byte> m_cam;
 
         public Form3()
         {
@@ -59,6 +36,9 @@ namespace FilterZERO
 
         private void btnCapturar_Click(object sender, EventArgs e)
         {
+            //camara = new VideoCaptureDevice(filterInfoCollection[cmbCameras.SelectedIndex].MonikerString);
+            //camara.Start(); 
+            //camara.NewFrame += VideoCaptureDevice_NewFrame;
             try
             {
                 pause = false;
@@ -75,33 +55,8 @@ namespace FilterZERO
                 throw new Exception(ex.Message);
 
             }
-
-            //camara = new VideoCaptureDevice(filterInfoCollection[cmbCameras.SelectedIndex].MonikerString);
-            //camara.Start(); 
-            //camara.NewFrame += VideoCaptureDevice_NewFrame;
-
-
-
-            //numFaces.Text = faceCount.ToString();
-
-
-            //try
-            //{
-            //    pause = false;
-            //    capture = new VideoCapture();
-            //    Mat m = new Mat();
-            //    capture.Read(m);
-            //    CameraBox.Image = m;
-            //    //aTimer.Elapsed += new ElapsedEventHandler(imageCapture);
-            //    aTimer.Interval = 500;
-            //    aTimer.Enabled = true;
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw new Exception(ex.Message);
-
-            //}
         }
+
 
         private void imageCapture(object source, ElapsedEventArgs e)
         {
@@ -125,6 +80,7 @@ namespace FilterZERO
                     if (haarDetect == true)
                     {
                         DetectFaceHaar();
+
                     }
                 }
             }
@@ -156,6 +112,8 @@ namespace FilterZERO
                     imgGray.ROI = face;
 
                 }
+                faceCount = faces.Length;
+
                 CameraBox2.Image = m_cam;
 
             }
@@ -164,36 +122,6 @@ namespace FilterZERO
                 throw new Exception(ex.Message);
 
             }
-        }
-
-
-        private void VideoCaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
-        {
-            //Bitmap bitmap = (Bitmap)eventArgs.Frame.Clone();
-            //Image<Rgb, byte> grayImage = new Image<Rgb, byte>(bitmap);
-
-            //bgrFrame = new Image<Rgb, byte>(bitmap);
-            //Image<Gray, byte> grayframe = bgrFrame.Convert<Gray, byte>();
-            ////Rectangle[] faces = cascadeClassifier.DetectMultiScale(grayframe, 1.2, 10, new System.Drawing.Size(50, 50), new System.Drawing.Size(200, 200));
-            ////Rectangle[] faces = cascadeClassifier.DetectMultiScale(grayframe, 1.4, 0);
-            //Rectangle[] faces = cascadeClassifier.DetectMultiScale(grayImage, 1.1, 3, Size.Empty);
-
-            ////detect face
-            //FaceName = "No face detected";
-            //foreach (var face in faces)
-            //{
-            //    bgrFrame.Draw(face, new Rgb(255, 255, 0), 2);
-            //    detectedFace = bgrFrame.Copy(face).Convert<Gray, byte>();
-                
-            //}
-            //faceCount = faces.Length;
-            //if (faceCount > 0)
-            //{
-            //    MessageBox.Show(faceCount.ToString());
-
-            //}
-            //CameraBox.Image = bgrFrame.ToBitmap();
-
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -211,6 +139,18 @@ namespace FilterZERO
             //{
             //    camara.Stop();
             //}
+        }
+
+        private void btnDetect_Click(object sender, EventArgs e)
+        {
+            haarDetect = true;
+            numFaces.Text = faceCount.ToString();
+
+        }
+
+        private void btnPause_Click(object sender, EventArgs e)
+        {
+            pause = true;
         }
 
         private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
