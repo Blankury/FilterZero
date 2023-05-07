@@ -29,16 +29,20 @@ namespace FilterZERO
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.numFaces = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnCapturar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.CameraBox = new System.Windows.Forms.PictureBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.CameraBox2 = new Emgu.CV.UI.ImageBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.CameraBox1 = new Emgu.CV.UI.ImageBox();
+            this.btnCapturar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,7 +51,10 @@ namespace FilterZERO
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CameraBox)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CameraBox2)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CameraBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,33 +83,33 @@ namespace FilterZERO
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(453, 24);
+            this.panel2.Location = new System.Drawing.Point(399, 24);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(347, 426);
+            this.panel2.Size = new System.Drawing.Size(401, 426);
             this.panel2.TabIndex = 4;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Gray;
-            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.numFaces);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 326);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(25);
-            this.panel4.Size = new System.Drawing.Size(347, 100);
+            this.panel4.Size = new System.Drawing.Size(401, 100);
             this.panel4.TabIndex = 1;
             // 
-            // label3
+            // numFaces
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(244, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Counter";
+            this.numFaces.AutoSize = true;
+            this.numFaces.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numFaces.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.numFaces.Location = new System.Drawing.Point(244, 44);
+            this.numFaces.Name = "numFaces";
+            this.numFaces.Size = new System.Drawing.Size(49, 13);
+            this.numFaces.TabIndex = 5;
+            this.numFaces.Text = "Counter";
             // 
             // label2
             // 
@@ -115,43 +122,72 @@ namespace FilterZERO
             this.label2.TabIndex = 2;
             this.label2.Text = "Counter";
             // 
-            // btnCapturar
-            // 
-            this.btnCapturar.BackColor = System.Drawing.Color.Orange;
-            this.btnCapturar.FlatAppearance.BorderSize = 0;
-            this.btnCapturar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCapturar.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapturar.Location = new System.Drawing.Point(147, 113);
-            this.btnCapturar.Name = "btnCapturar";
-            this.btnCapturar.Size = new System.Drawing.Size(122, 50);
-            this.btnCapturar.TabIndex = 4;
-            this.btnCapturar.Text = "Capturar";
-            this.btnCapturar.UseVisualStyleBackColor = false;
-            this.btnCapturar.Click += new System.EventHandler(this.btnCapturar_Click);
-            // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.Gray;
-            this.panel3.Controls.Add(this.CameraBox);
+            this.panel3.Controls.Add(this.panel6);
+            this.panel3.Controls.Add(this.panel5);
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(15);
-            this.panel3.Size = new System.Drawing.Size(347, 281);
+            this.panel3.Size = new System.Drawing.Size(401, 281);
             this.panel3.TabIndex = 0;
             // 
-            // CameraBox
+            // panel6
             // 
-            this.CameraBox.BackColor = System.Drawing.Color.Black;
-            this.CameraBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CameraBox.Location = new System.Drawing.Point(15, 15);
-            this.CameraBox.Name = "CameraBox";
-            this.CameraBox.Size = new System.Drawing.Size(317, 251);
-            this.CameraBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.CameraBox.TabIndex = 0;
-            this.CameraBox.TabStop = false;
+            this.panel6.Controls.Add(this.CameraBox2);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel6.Location = new System.Drawing.Point(202, 15);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(184, 251);
+            this.panel6.TabIndex = 2;
+            // 
+            // CameraBox2
+            // 
+            this.CameraBox2.BackColor = System.Drawing.Color.Black;
+            this.CameraBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CameraBox2.Location = new System.Drawing.Point(0, 0);
+            this.CameraBox2.Name = "CameraBox2";
+            this.CameraBox2.Size = new System.Drawing.Size(184, 251);
+            this.CameraBox2.TabIndex = 2;
+            this.CameraBox2.TabStop = false;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.CameraBox1);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel5.Location = new System.Drawing.Point(15, 15);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(190, 251);
+            this.panel5.TabIndex = 1;
+            // 
+            // CameraBox1
+            // 
+            this.CameraBox1.BackColor = System.Drawing.Color.Black;
+            this.CameraBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CameraBox1.Location = new System.Drawing.Point(0, 0);
+            this.CameraBox1.Name = "CameraBox1";
+            this.CameraBox1.Size = new System.Drawing.Size(190, 251);
+            this.CameraBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.CameraBox1.TabIndex = 2;
+            this.CameraBox1.TabStop = false;
+            // 
+            // btnCapturar
+            // 
+            this.btnCapturar.BackColor = System.Drawing.Color.Orange;
+            this.btnCapturar.FlatAppearance.BorderSize = 0;
+            this.btnCapturar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCapturar.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapturar.Location = new System.Drawing.Point(135, 119);
+            this.btnCapturar.Name = "btnCapturar";
+            this.btnCapturar.Size = new System.Drawing.Size(122, 50);
+            this.btnCapturar.TabIndex = 4;
+            this.btnCapturar.Text = "Capturar";
+            this.btnCapturar.UseVisualStyleBackColor = false;
+            this.btnCapturar.Click += new System.EventHandler(this.btnCapturar_Click);
             // 
             // panel1
             // 
@@ -163,13 +199,13 @@ namespace FilterZERO
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(426, 426);
+            this.panel1.Size = new System.Drawing.Size(393, 426);
             this.panel1.TabIndex = 5;
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(65, 259);
+            this.listBox1.Location = new System.Drawing.Point(42, 256);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(300, 147);
             this.listBox1.TabIndex = 2;
@@ -195,7 +231,7 @@ namespace FilterZERO
             this.cmbCameras.FormattingEnabled = true;
             this.cmbCameras.Location = new System.Drawing.Point(65, 60);
             this.cmbCameras.Name = "cmbCameras";
-            this.cmbCameras.Size = new System.Drawing.Size(284, 21);
+            this.cmbCameras.Size = new System.Drawing.Size(251, 21);
             this.cmbCameras.TabIndex = 0;
             // 
             // Form3
@@ -218,7 +254,10 @@ namespace FilterZERO
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.CameraBox)).EndInit();
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CameraBox2)).EndInit();
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CameraBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -238,8 +277,11 @@ namespace FilterZERO
         private System.Windows.Forms.ComboBox cmbCameras;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCapturar;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label numFaces;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.PictureBox CameraBox;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel5;
+        private Emgu.CV.UI.ImageBox CameraBox2;
+        private Emgu.CV.UI.ImageBox CameraBox1;
     }
 }

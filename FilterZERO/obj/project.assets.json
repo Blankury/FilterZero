@@ -35,10 +35,10 @@
           "lib/AForge.Video.DirectShow.dll": {}
         }
       },
-      "EMGU.CV/3.4.1.2976": {
+      "EMGU.CV/3.4.3.3016": {
         "type": "package",
         "dependencies": {
-          "ZedGraph": "5.1.7"
+          "ZedGraph": "[5.1.7]"
         },
         "compile": {
           "lib/net35/Emgu.CV.UI.dll": {},
@@ -164,10 +164,10 @@
           "lib/AForge.Video.DirectShow.dll": {}
         }
       },
-      "EMGU.CV/3.4.1.2976": {
+      "EMGU.CV/3.4.3.3016": {
         "type": "package",
         "dependencies": {
-          "ZedGraph": "5.1.7"
+          "ZedGraph": "[5.1.7]"
         },
         "compile": {
           "lib/net35/Emgu.CV.UI.dll": {},
@@ -293,10 +293,10 @@
           "lib/AForge.Video.DirectShow.dll": {}
         }
       },
-      "EMGU.CV/3.4.1.2976": {
+      "EMGU.CV/3.4.3.3016": {
         "type": "package",
         "dependencies": {
-          "ZedGraph": "5.1.7"
+          "ZedGraph": "[5.1.7]"
         },
         "compile": {
           "lib/net35/Emgu.CV.UI.dll": {},
@@ -422,10 +422,10 @@
           "lib/AForge.Video.DirectShow.dll": {}
         }
       },
-      "EMGU.CV/3.4.1.2976": {
+      "EMGU.CV/3.4.3.3016": {
         "type": "package",
         "dependencies": {
-          "ZedGraph": "5.1.7"
+          "ZedGraph": "[5.1.7]"
         },
         "compile": {
           "lib/net35/Emgu.CV.UI.dll": {},
@@ -558,10 +558,10 @@
         "lib/AForge.Video.DirectShow.xml"
       ]
     },
-    "EMGU.CV/3.4.1.2976": {
-      "sha512": "jfh+Z6sLs14XtwUG1zehZUltPPVTD1Nj74aZdGfF/OJV6uxwviFODYuqyKpKdk1qKisME0CuUjx+UD86UYfwpQ==",
+    "EMGU.CV/3.4.3.3016": {
+      "sha512": "rU/2aJcmo4IFy3DFNH3eRPv/VT6iH2g6UO17o9d8rrhlSzzo/OT7GFrhYFhRO6ZPyqhocNjXbmlKNHDL5klLTA==",
       "type": "package",
-      "path": "emgu.cv/3.4.1.2976",
+      "path": "emgu.cv/3.4.3.3016",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -569,19 +569,19 @@
         "build/x64/concrt140.dll",
         "build/x64/cvextern.dll",
         "build/x64/msvcp140.dll",
-        "build/x64/opencv_ffmpeg341_64.dll",
+        "build/x64/opencv_ffmpeg343_64.dll",
         "build/x64/vcruntime140.dll",
         "build/x86/concrt140.dll",
         "build/x86/cvextern.dll",
         "build/x86/msvcp140.dll",
-        "build/x86/opencv_ffmpeg341.dll",
+        "build/x86/opencv_ffmpeg343.dll",
         "build/x86/vcruntime140.dll",
-        "emgu.cv.3.4.1.2976.nupkg.sha512",
+        "emgu.cv.3.4.3.3016.nupkg.sha512",
         "emgu.cv.nuspec",
+        "lib/net35/Emgu.CV.UI.XML",
         "lib/net35/Emgu.CV.UI.dll",
-        "lib/net35/Emgu.CV.UI.xml",
-        "lib/net35/Emgu.CV.World.dll",
-        "lib/net35/Emgu.CV.World.xml"
+        "lib/net35/Emgu.CV.World.XML",
+        "lib/net35/Emgu.CV.World.dll"
       ]
     },
     "Emgu.CV.Bitmap/4.4.0.4061": {
@@ -670,7 +670,7 @@
     ".NETFramework,Version=v4.7.2": [
       "AForge.Video >= 2.2.5",
       "AForge.Video.DirectShow >= 2.2.5",
-      "Emgu.CV >= 3.4.1.2976",
+      "Emgu.CV >= 3.4.3.3016",
       "Emgu.CV.Bitmap >= 4.4.0.4061"
     ]
   },
@@ -717,7 +717,7 @@
           },
           "Emgu.CV": {
             "target": "Package",
-            "version": "[3.4.1.2976, )"
+            "version": "[3.4.3.3016, )"
           },
           "Emgu.CV.Bitmap": {
             "target": "Package",
@@ -743,7 +743,7 @@
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Degradación del paquete detectada: Emgu.CV de 4.4.0 a 3.4.1.2976. Haga referencia al paquete directamente desde el proyecto para seleccionar una versión diferente. \r\n FilterZERO -> Emgu.CV.Bitmap 4.4.0.4061 -> Emgu.CV (>= 4.4.0 && < 4.4.1) \r\n FilterZERO -> EMGU.CV (>= 3.4.1.2976)",
+      "message": "Degradación del paquete detectada: Emgu.CV de 4.4.0 a 3.4.3.3016. Haga referencia al paquete directamente desde el proyecto para seleccionar una versión diferente. \r\n FilterZERO -> Emgu.CV.Bitmap 4.4.0.4061 -> Emgu.CV (>= 4.4.0 && < 4.4.1) \r\n FilterZERO -> EMGU.CV (>= 3.4.3.3016)",
       "libraryId": "Emgu.CV",
       "targetGraphs": [
         ".NETFramework,Version=v4.7.2",

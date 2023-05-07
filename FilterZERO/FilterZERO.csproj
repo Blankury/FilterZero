@@ -33,18 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Emgu.CV.GPU, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Emgu.CV.GPU.dll</HintPath>
-    </Reference>
-    <Reference Include="Emgu.CV.ML, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Emgu.CV.ML.dll</HintPath>
-    </Reference>
-    <Reference Include="Emgu.CV.UI, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Emgu.CV.UI.dll</HintPath>
-    </Reference>
     <Reference Include="Emgu.Util, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\Emgu.Util.dll</HintPath>
@@ -136,7 +124,9 @@
     <None Include="Resources\LOGO.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="haarcascade_eye.xml" />
     <Content Include="haarcascade_frontalface_default.xml" />
+    <Content Include="lbpcascade_frontalface.xml" />
     <None Include="Resources\stat.png" />
     <None Include="Resources\play.png" />
     <None Include="Resources\rep1.png" />
@@ -149,7 +139,7 @@
       <Version>2.2.5</Version>
     </PackageReference>
     <PackageReference Include="Emgu.CV">
-      <Version>3.4.1.2976</Version>
+      <Version>3.4.3.3016</Version>
     </PackageReference>
     <PackageReference Include="Emgu.CV.Bitmap">
       <Version>4.4.0.4061</Version>
