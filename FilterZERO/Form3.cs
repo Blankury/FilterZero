@@ -21,8 +21,8 @@ namespace FilterZERO
         VideoCapture capture;
         bool pause = false;
         bool haarDetect = false;
-
         int faceCount = 0;
+        static readonly CascadeClassifier cascadeClassifier = new CascadeClassifier("haarcascade_frontalface_default.xml");
 
         Image<Bgr, Byte> m_cam;
 
@@ -97,12 +97,16 @@ namespace FilterZERO
 
             try
             {
-                string facePath = Path.GetFullPath("haarcascade_frontalface_default.xml");
+                string facePath = "haarcascade_frontalface_default.xml";
 
                 CascadeClassifier classifierFace = new CascadeClassifier(facePath);
 
                 var imgGray = m1.ToImage<Bgr, Byte>().Convert<Gray, byte>().Clone();
+                //Image<Gray, byte> imgGray = m1.ToImage<Bgr, Byte>().Convert<Gray, byte>().Clone();
+
                 Rectangle[] faces = classifierFace.DetectMultiScale(imgGray, 1.1, 5);
+                //Rectangle[] faces = cascadeClassifier.DetectMultiScale(imgGray, 1.1, 3, Size.Empty);
+
                 m_cam = m1.ToImage<Bgr, Byte>();
 
                 foreach (var face in faces)
