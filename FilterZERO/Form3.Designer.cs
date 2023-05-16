@@ -40,12 +40,11 @@ namespace FilterZERO
             this.CameraBox = new System.Windows.Forms.PictureBox();
             this.btnCapturar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.namePerson = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnDetect = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbCameras = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -98,25 +97,29 @@ namespace FilterZERO
             // 
             // numFaces
             // 
+            this.numFaces.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.numFaces.AutoSize = true;
             this.numFaces.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numFaces.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.numFaces.Location = new System.Drawing.Point(259, 44);
+            this.numFaces.Location = new System.Drawing.Point(178, 44);
             this.numFaces.Name = "numFaces";
-            this.numFaces.Size = new System.Drawing.Size(49, 13);
+            this.numFaces.Size = new System.Drawing.Size(13, 13);
             this.numFaces.TabIndex = 5;
-            this.numFaces.Text = "Counter";
+            this.numFaces.Text = "0";
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(60, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 13);
+            this.label2.Size = new System.Drawing.Size(112, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Cantidad de personas:";
+            this.label2.Text = "Cantidad de rostros:";
             // 
             // panel3
             // 
@@ -148,7 +151,7 @@ namespace FilterZERO
             this.btnCapturar.FlatAppearance.BorderSize = 0;
             this.btnCapturar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCapturar.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapturar.Location = new System.Drawing.Point(65, 108);
+            this.btnCapturar.Location = new System.Drawing.Point(135, 112);
             this.btnCapturar.Name = "btnCapturar";
             this.btnCapturar.Size = new System.Drawing.Size(122, 50);
             this.btnCapturar.TabIndex = 4;
@@ -159,9 +162,8 @@ namespace FilterZERO
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gray;
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.namePerson);
             this.panel1.Controls.Add(this.btnAgregar);
-            this.panel1.Controls.Add(this.btnDetect);
             this.panel1.Controls.Add(this.listBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnCapturar);
@@ -172,32 +174,26 @@ namespace FilterZERO
             this.panel1.Size = new System.Drawing.Size(393, 426);
             this.panel1.TabIndex = 5;
             // 
+            // namePerson
+            // 
+            this.namePerson.Location = new System.Drawing.Point(65, 184);
+            this.namePerson.Name = "namePerson";
+            this.namePerson.Size = new System.Drawing.Size(122, 20);
+            this.namePerson.TabIndex = 8;
+            // 
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.Orange;
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(194, 164);
+            this.btnAgregar.Location = new System.Drawing.Point(194, 168);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(122, 50);
             this.btnAgregar.TabIndex = 7;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
-            // 
-            // btnDetect
-            // 
-            this.btnDetect.BackColor = System.Drawing.Color.Orange;
-            this.btnDetect.FlatAppearance.BorderSize = 0;
-            this.btnDetect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetect.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetect.Location = new System.Drawing.Point(194, 108);
-            this.btnDetect.Name = "btnDetect";
-            this.btnDetect.Size = new System.Drawing.Size(122, 50);
-            this.btnDetect.TabIndex = 5;
-            this.btnDetect.Text = "Detectar";
-            this.btnDetect.UseVisualStyleBackColor = false;
-            this.btnDetect.Click += new System.EventHandler(this.btnDetect_Click);
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // listBox1
             // 
@@ -230,13 +226,6 @@ namespace FilterZERO
             this.cmbCameras.Name = "cmbCameras";
             this.cmbCameras.Size = new System.Drawing.Size(251, 21);
             this.cmbCameras.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(65, 184);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(122, 20);
-            this.textBox1.TabIndex = 8;
             // 
             // Form3
             // 
@@ -280,9 +269,8 @@ namespace FilterZERO
         private System.Windows.Forms.Button btnCapturar;
         private System.Windows.Forms.Label numFaces;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button btnDetect;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.PictureBox CameraBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox namePerson;
     }
 }

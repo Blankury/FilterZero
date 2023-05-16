@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "tvyN6Tot93TtvRfkJ/YHDS13uSkVS2313ZlMJlEX2V2cODH3zxMg+eCDYnpnWBATHaZ5Ry2n1p3K9tPUeBqfdA==",
+  "dgSpecHash": "xRn5N5bGWi4pfLbkOCShZ0JgFPJrGhAWOs6CJhG01m7SAozszNt94sA9Pg8qOPjLEzkD/krZmsxwrUwzW4HHxg==",
   "success": true,
   "projectFilePath": "E:\\Eliza\\LMAD\\Procesamiento\\FilterZERO\\FilterZERO\\FilterZERO.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\beliz\\.nuget\\packages\\aforge\\2.2.5\\aforge.2.2.5.nupkg.sha512",
     "C:\\Users\\beliz\\.nuget\\packages\\aforge.video\\2.2.5\\aforge.video.2.2.5.nupkg.sha512",
     "C:\\Users\\beliz\\.nuget\\packages\\aforge.video.directshow\\2.2.5\\aforge.video.directshow.2.2.5.nupkg.sha512",
-    "C:\\Users\\beliz\\.nuget\\packages\\emgu.cv\\3.4.3.3016\\emgu.cv.3.4.3.3016.nupkg.sha512",
+    "C:\\Users\\beliz\\.nuget\\packages\\emgu.cv\\4.1.0.3408\\emgu.cv.4.1.0.3408.nupkg.sha512",
     "C:\\Users\\beliz\\.nuget\\packages\\emgu.cv.bitmap\\4.7.0.5276\\emgu.cv.bitmap.4.7.0.5276.nupkg.sha512",
     "C:\\Users\\beliz\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
     "C:\\Users\\beliz\\.nuget\\packages\\zedgraph\\5.1.7\\zedgraph.5.1.7.nupkg.sha512"
@@ -17,7 +17,7 @@
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Degradación del paquete detectada: Emgu.CV de 4.7.0.5276 a 3.4.3.3016. Haga referencia al paquete directamente desde el proyecto para seleccionar una versión diferente. \r\n FilterZERO -> Emgu.CV.Bitmap 4.7.0.5276 -> Emgu.CV (>= 4.7.0.5276) \r\n FilterZERO -> EMGU.CV (>= 3.4.3.3016)",
+      "message": "Degradación del paquete detectada: Emgu.CV de 4.7.0.5276 a 4.1.0.3408. Haga referencia al paquete directamente desde el proyecto para seleccionar una versión diferente. \r\n FilterZERO -> Emgu.CV.Bitmap 4.7.0.5276 -> Emgu.CV (>= 4.7.0.5276) \r\n FilterZERO -> EMGU.CV (>= 4.1.0.3408)",
       "libraryId": "Emgu.CV",
       "targetGraphs": [
         ".NETFramework,Version=v4.7.2",

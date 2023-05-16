@@ -42,5 +42,5 @@ E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\bin\Debug\System.Drawing.Commo
 E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\bin\Debug\AForge.dll
 E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\bin\Debug\AForge.Video.dll
 E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\bin\Debug\AForge.Video.DirectShow.dll
-E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\bin\Debug\x64\opencv_ffmpeg343_64.dll
-E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\bin\Debug\x86\opencv_ffmpeg343.dll
+E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\bin\Debug\x64\opencv_ffmpeg410_64.dll
+E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\bin\Debug\x86\opencv_ffmpeg410.dll

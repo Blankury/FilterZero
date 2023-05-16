@@ -120,8 +120,6 @@
     <None Include="Resources\LOGO.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="haarcascade_frontalface_alt.xml" />
-    <Content Include="haarcascade_frontalface_alt_tree.xml" />
     <Content Include="haarcascade_frontalface_default.xml" />
     <None Include="Resources\stat.png" />
     <None Include="Resources\play.png" />
@@ -135,7 +133,7 @@
       <Version>2.2.5</Version>
     </PackageReference>
     <PackageReference Include="Emgu.CV">
-      <Version>3.4.3.3016</Version>
+      <Version>4.1.0.3408</Version>
     </PackageReference>
     <PackageReference Include="Emgu.CV.Bitmap">
       <Version>4.7.0.5276</Version>

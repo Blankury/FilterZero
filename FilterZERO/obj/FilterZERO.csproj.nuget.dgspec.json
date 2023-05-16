@@ -44,7 +44,7 @@
             },
             "Emgu.CV": {
               "target": "Package",
-              "version": "[3.4.3.3016, )"
+              "version": "[4.1.0.3408, )"
             },
             "Emgu.CV.Bitmap": {
               "target": "Package",
