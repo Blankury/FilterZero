@@ -29,7 +29,6 @@ namespace FilterZERO
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,27 +37,21 @@ namespace FilterZERO
             this.numFaces = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.CameraBox1 = new Emgu.CV.UI.ImageBox();
+            this.CameraBox = new System.Windows.Forms.PictureBox();
             this.btnCapturar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.btnDetect = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbCameras = new System.Windows.Forms.ComboBox();
-            this.btnPause = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.CameraBox2 = new Emgu.CV.UI.ImageBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CameraBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CameraBox)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CameraBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -108,7 +101,7 @@ namespace FilterZERO
             this.numFaces.AutoSize = true;
             this.numFaces.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numFaces.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.numFaces.Location = new System.Drawing.Point(244, 44);
+            this.numFaces.Location = new System.Drawing.Point(259, 44);
             this.numFaces.Name = "numFaces";
             this.numFaces.Size = new System.Drawing.Size(49, 13);
             this.numFaces.TabIndex = 5;
@@ -119,11 +112,11 @@ namespace FilterZERO
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(189, 44);
+            this.label2.Location = new System.Drawing.Point(60, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.Size = new System.Drawing.Size(123, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Counter";
+            this.label2.Text = "Cantidad de personas:";
             // 
             // panel3
             // 
@@ -131,42 +124,23 @@ namespace FilterZERO
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.Gray;
-            this.panel3.Controls.Add(this.panel6);
-            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Controls.Add(this.CameraBox);
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(15);
             this.panel3.Size = new System.Drawing.Size(401, 281);
             this.panel3.TabIndex = 0;
             // 
-            // panel6
+            // CameraBox
             // 
-            this.panel6.Controls.Add(this.CameraBox2);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(202, 15);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(184, 251);
-            this.panel6.TabIndex = 2;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.CameraBox1);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel5.Location = new System.Drawing.Point(15, 15);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(190, 251);
-            this.panel5.TabIndex = 1;
-            // 
-            // CameraBox1
-            // 
-            this.CameraBox1.BackColor = System.Drawing.Color.Black;
-            this.CameraBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CameraBox1.Location = new System.Drawing.Point(0, 0);
-            this.CameraBox1.Name = "CameraBox1";
-            this.CameraBox1.Size = new System.Drawing.Size(190, 251);
-            this.CameraBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.CameraBox1.TabIndex = 2;
-            this.CameraBox1.TabStop = false;
+            this.CameraBox.BackColor = System.Drawing.Color.Black;
+            this.CameraBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CameraBox.Location = new System.Drawing.Point(15, 15);
+            this.CameraBox.Name = "CameraBox";
+            this.CameraBox.Size = new System.Drawing.Size(371, 251);
+            this.CameraBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.CameraBox.TabIndex = 8;
+            this.CameraBox.TabStop = false;
             // 
             // btnCapturar
             // 
@@ -185,8 +159,8 @@ namespace FilterZERO
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gray;
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.btnAgregar);
-            this.panel1.Controls.Add(this.btnPause);
             this.panel1.Controls.Add(this.btnDetect);
             this.panel1.Controls.Add(this.listBox1);
             this.panel1.Controls.Add(this.label1);
@@ -197,6 +171,19 @@ namespace FilterZERO
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(393, 426);
             this.panel1.TabIndex = 5;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.Orange;
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Location = new System.Drawing.Point(194, 164);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(122, 50);
+            this.btnAgregar.TabIndex = 7;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = false;
             // 
             // btnDetect
             // 
@@ -244,43 +231,12 @@ namespace FilterZERO
             this.cmbCameras.Size = new System.Drawing.Size(251, 21);
             this.cmbCameras.TabIndex = 0;
             // 
-            // btnPause
+            // textBox1
             // 
-            this.btnPause.BackColor = System.Drawing.Color.Orange;
-            this.btnPause.FlatAppearance.BorderSize = 0;
-            this.btnPause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPause.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPause.Location = new System.Drawing.Point(65, 164);
-            this.btnPause.Name = "btnPause";
-            this.btnPause.Size = new System.Drawing.Size(122, 50);
-            this.btnPause.TabIndex = 6;
-            this.btnPause.Text = "Pause";
-            this.btnPause.UseVisualStyleBackColor = false;
-            this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackColor = System.Drawing.Color.Orange;
-            this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(194, 164);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(122, 50);
-            this.btnAgregar.TabIndex = 7;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            // 
-            // CameraBox2
-            // 
-            this.CameraBox2.BackColor = System.Drawing.Color.Black;
-            this.CameraBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CameraBox2.Location = new System.Drawing.Point(0, 0);
-            this.CameraBox2.Name = "CameraBox2";
-            this.CameraBox2.Size = new System.Drawing.Size(184, 251);
-            this.CameraBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.CameraBox2.TabIndex = 2;
-            this.CameraBox2.TabStop = false;
+            this.textBox1.Location = new System.Drawing.Point(65, 184);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(122, 20);
+            this.textBox1.TabIndex = 8;
             // 
             // Form3
             // 
@@ -302,12 +258,9 @@ namespace FilterZERO
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.CameraBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CameraBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CameraBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,12 +280,9 @@ namespace FilterZERO
         private System.Windows.Forms.Button btnCapturar;
         private System.Windows.Forms.Label numFaces;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel5;
-        private Emgu.CV.UI.ImageBox CameraBox1;
         private System.Windows.Forms.Button btnDetect;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnPause;
-        private Emgu.CV.UI.ImageBox CameraBox2;
+        private System.Windows.Forms.PictureBox CameraBox;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

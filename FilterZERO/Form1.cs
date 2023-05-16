@@ -22,14 +22,8 @@ namespace FilterZERO
         private int[] histogramaG = new int[256];
         private int[] histogramaB = new int[256];
         private int[,] conv3x3 = new int[3, 3];
-        private int factor;
-        private int offset;
         private int porcentaje;
         int contraste;
-
-        //variables para double buffer evitar el flicker
-        //flicker:
-        private int anchoVentana, altoVentana;
 
         public Form1()
         {
@@ -67,7 +61,6 @@ namespace FilterZERO
 
         private void videoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //this.Hide();
             Form2 NewWindow = new Form2();
             NewWindow.ShowDialog();
         }
@@ -83,19 +76,19 @@ namespace FilterZERO
             //invertir colores de la imagen para sacar su negativo 
             int x = 0;
             int y = 0;
-            Color rColor = new Color(); //color que resulta
-            Color oColor = new Color(); //color que obtenemos de la imagen
+            Color colorResultante = new Color(); //color que resulta
+            Color colorOriginal = new Color(); //color que obtenemos de la imagen
 
             for (x = 0; x < resultado.Width; x++)
             {
                 for (y = 0; y < resultado.Height; y++)
                 {
                     //obtener el color del pixel
-                    oColor = apilado.GetPixel(x, y);
+                    colorOriginal = apilado.GetPixel(x, y);
                     //procesamos y obtenemos el nuevo color
-                    rColor = Color.FromArgb(255 - oColor.R, 255 - oColor.G, 255 - oColor.B);
+                    colorResultante = Color.FromArgb(255 - colorOriginal.R, 255 - colorOriginal.G, 255 - colorOriginal.B);
                     //colocar el color en resultante
-                    resultado.SetPixel(x, y, rColor);
+                    resultado.SetPixel(x, y, colorResultante);
                 }
             }
 
@@ -154,8 +147,8 @@ namespace FilterZERO
             int xm = 0;
             int ym = 0;
 
-            Color rColor;
-            Color oColor;
+            Color colorResultante;
+            Color colorOriginal;
 
             //sumas
             int rs = 0;
@@ -177,10 +170,10 @@ namespace FilterZERO
                     for (xm = x; xm < (x + mosaico); xm++){
                         for (ym =y; ym < (y+ mosaico); ym++)
                         {
-                            oColor = apilado.GetPixel(xm, ym);
-                            rs += oColor.R;
-                            gs += oColor.G;
-                            bs += oColor.B;
+                            colorOriginal = apilado.GetPixel(xm, ym);
+                            rs += colorOriginal.R;
+                            gs += colorOriginal.G;
+                            bs += colorOriginal.B;
                         }
                     }
 
@@ -188,14 +181,14 @@ namespace FilterZERO
                     r = rs / (mosaico * mosaico);
                     g = gs / (mosaico * mosaico);
                     b = bs / (mosaico * mosaico);
-                    rColor = Color.FromArgb(r, g, b);
+                    colorResultante = Color.FromArgb(r, g, b);
 
                     //Dibujar mosaico
                     for (xm = x; xm < (x + mosaico); xm++)
                     {
                         for (ym = y; ym < (y + mosaico); ym++)
                         {
-                            resultado.SetPixel(xm, ym, rColor);
+                            resultado.SetPixel(xm, ym, colorResultante);
                         }
                     }
                 }
@@ -210,48 +203,24 @@ namespace FilterZERO
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //Crear la imagen en tonos de gris
-            tonosDeGrisToolStripMenuItem_Click(sender, e);
-
-            int x = 0;
-            int y = 0;
-
-            Color rColor = new Color(); //color que resulta
-
-            for (x = 0; x < resultado.Width; x++)
-            {
-                for (y = 0; y < resultado.Height; y++)
-                {             
-                    //get pixel color
-                    rColor = resultado.GetPixel(x, y);
-                    histograma[rColor.R]++;
-                }
-            }
-            Form4 NewWindow = new Form4(histograma);
-            NewWindow.ShowDialog();
-        }
-
         private void tonosDeGrisToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-            int x = 0;
-            int y = 0;
-            Color rColor = new Color(); //color que resulta
-            Color oColor = new Color(); //color que obtenemos de la imagen
-            float g = 0;
-            for (x = 0; x < apilado.Width; x++)
+            Color colorResultante = new Color(); //color que resulta
+            Color colorOriginal = new Color(); //color que obtenemos de la imagen
+
+            float Grises = 0;
+
+            for (int x = 0; x < apilado.Width; x++)
             {
-                for (y = 0; y < apilado.Height; y++)
+                for (int y = 0; y < apilado.Height; y++)
                 {
                     //Obtnemos el color del pixel
-                    oColor = apilado.GetPixel(x, y);
-                    g = oColor.R * 0.299f + oColor.G * 0.587f + oColor.B * 0.114f;
+                    colorOriginal = apilado.GetPixel(x, y);
+                    Grises = colorOriginal.R * 0.299f + colorOriginal.G * 0.587f + colorOriginal.B * 0.114f;
 
-                    rColor = Color.FromArgb((int)g, (int)g, (int)g);
+                    colorResultante = Color.FromArgb((int)Grises, (int)Grises, (int)Grises);
 
-                    resultado.SetPixel(x , y, rColor);
+                    resultado.SetPixel(x , y, colorResultante);
                 }
             }
 
@@ -259,65 +228,40 @@ namespace FilterZERO
             apilado = resultado;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            int x = 0;
-            int y = 0;
-            Color rColor = new Color(); //color que resulta
-
-            for (x = 0; x < resultado.Width; x++)
-            {
-                for (y = 0; y < resultado.Height; y++)
-                {
-                    //get pixel color
-                    rColor = resultado.GetPixel(x, y);
-                    histogramaR[rColor.R]++; histogramaG[rColor.G]++;histogramaB[rColor.B]++;
-
-                    resultado.SetPixel(x, y, rColor);
-                }
-            }
-            Form4 NewWindow = new Form4(histogramaR, histogramaG, histogramaB);
-            NewWindow.ShowDialog();
-
-            //suavizado del histograma
-        }
-
         private void fRuido(object sender, EventArgs e, int Sporcentaje)
         {
-            int x = 0;
-            int y = 0;
-
             //0 a 200
             //colores entre estos rangos uguuu
             int rangoMin = 85;
             int rangoMax = 115;
             float pBrillo = 0;
 
-            Random rnd = new Random();
-            Color rColor;
-            Color oColor;
+            Random random = new Random();
+
+            Color colorResultante;
+            Color colorOriginal;
 
             int r = 0;
             int g = 0;
             int b = 0;
 
-            for (x = 0; x < apilado.Width; x++)
+            for (int x = 0; x < apilado.Width; x++)
             {
-                for (y = 0; y < apilado.Height; y++)
+                for (int y = 0; y < apilado.Height; y++)
                 {
                     //Verificamos si el pixel tiene ruido o no
-                    if (rnd.Next(1, 100) <= Sporcentaje)
+                    if (random.Next(1, 100) <= Sporcentaje)
                     {
                         //metodo 1 al color resultante le creamos un color al azar
-                        rColor = Color.FromArgb(rnd.Next(rangoMin, rangoMax),
-                            rnd.Next(rangoMin, rangoMax), rnd.Next(rangoMin, rangoMax));
+                        colorResultante = Color.FromArgb(random.Next(rangoMin, rangoMax),
+                            random.Next(rangoMin, rangoMax), random.Next(rangoMin, rangoMax));
 
                         //metodo2
-                        pBrillo = rnd.Next(rangoMin, rangoMax) / 100.0f;
-                        oColor = apilado.GetPixel(x, y);
-                        r = (int)(oColor.R * pBrillo);
-                        g = (int)(oColor.G * pBrillo);
-                        b = (int)(oColor.B * pBrillo);
+                        pBrillo = random.Next(rangoMin, rangoMax) / 100.0f;
+                        colorOriginal = apilado.GetPixel(x, y);
+                        r = (int)(colorOriginal.R * pBrillo);
+                        g = (int)(colorOriginal.G * pBrillo);
+                        b = (int)(colorOriginal.B * pBrillo);
 
                         if (r > 255) r = 255;
                         else if (r < 0) r = 0;
@@ -328,15 +272,15 @@ namespace FilterZERO
                         if (b > 255) b = 255;
                         else if (r < 0) b = 0;
 
-                        rColor = Color.FromArgb(r, g, b);
+                        colorResultante = Color.FromArgb(r, g, b);
                     }
 
                     else
                     {
-                        rColor = apilado.GetPixel(x, y);
+                        colorResultante = apilado.GetPixel(x, y);
                     }
 
-                    resultado.SetPixel(x, y, rColor);
+                    resultado.SetPixel(x, y, colorResultante);
                 }
             }
 
@@ -391,8 +335,8 @@ namespace FilterZERO
             int x = 0;
             int y = 0;
 
-            Color rColor = new Color();
-            Color oColor = new Color();
+            Color colorResultante = new Color();
+            Color colorOriginal = new Color();
 
             float r = 0;
             float g = 0;
@@ -403,22 +347,22 @@ namespace FilterZERO
                 for (y = 0; y < apilado.Height; y++)
                 {
                     //Get pixel color
-                    oColor = apilado.GetPixel(x, y);
+                    colorOriginal = apilado.GetPixel(x, y);
                     //process and get the new colorxdd le salia el ingles de repente
-                    r = ((((oColor.R / 255.0f) - 0.5f) * c) + 0.5f) * 255;
+                    r = ((((colorOriginal.R / 255.0f) - 0.5f) * c) + 0.5f) * 255;
                     if (r > 255) r = 255;
                     if (r < 0) r = 0;
 
-                    g = ((((oColor.G / 255.0f) - 0.5f) * c) + 0.5f) * 255;
+                    g = ((((colorOriginal.G / 255.0f) - 0.5f) * c) + 0.5f) * 255;
                     if (g > 255) g = 255;
                     if (g < 0) g = 0;
 
-                    b = ((((oColor.B / 255.0f) - 0.5f) * c) + 0.5f) * 255;
+                    b = ((((colorOriginal.B / 255.0f) - 0.5f) * c) + 0.5f) * 255;
                     if (b > 255) b = 255;
                     if (b < 0) b = 0;
 
-                    rColor = Color.FromArgb((int)r, (int)g, (int)b);
-                    resultado.SetPixel(x, y, rColor);
+                    colorResultante = Color.FromArgb((int)r, (int)g, (int)b);
+                    resultado.SetPixel(x, y, colorResultante);
                 }
             }
 
@@ -449,5 +393,52 @@ namespace FilterZERO
             pictureBox1.Image = original;
 
         }
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Color colorOriginal = new Color();
+
+            for (int x = 0; x < resultado.Width; x++)
+            {
+                for (int y = 0; y < resultado.Height; y++)
+                {
+                    //get pixel color
+                    colorOriginal = resultado.GetPixel(x, y);
+                    histogramaR[colorOriginal.R]++; histogramaG[colorOriginal.G]++; histogramaB[colorOriginal.B]++;
+
+                    resultado.SetPixel(x, y, colorOriginal);
+                }
+            }
+            Form4 NewWindow = new Form4(histogramaR, histogramaG, histogramaB);
+            NewWindow.ShowDialog();
+
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Crear la imagen en tonos de gris
+            tonosDeGrisToolStripMenuItem_Click(sender, e);
+
+            int x = 0;
+            int y = 0;
+
+            Color colorResultante = new Color(); //color que resulta
+
+            for (x = 0; x < resultado.Width; x++)
+            {
+                for (y = 0; y < resultado.Height; y++)
+                {
+                    //get pixel color
+                    colorResultante = resultado.GetPixel(x, y);
+                    histograma[colorResultante.R]++;
+                }
+            }
+            Form4 NewWindow = new Form4(histograma);
+            NewWindow.ShowDialog();
+        }
+
+
     }
 }

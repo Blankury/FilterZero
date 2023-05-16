@@ -49,6 +49,7 @@ namespace FilterZERO
             this.btnStop = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.ningunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -80,14 +81,14 @@ namespace FilterZERO
             // cargarImagenToolStripMenuItem
             // 
             this.cargarImagenToolStripMenuItem.Name = "cargarImagenToolStripMenuItem";
-            this.cargarImagenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cargarImagenToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.cargarImagenToolStripMenuItem.Text = "Cargar video";
             this.cargarImagenToolStripMenuItem.Click += new System.EventHandler(this.cargarImagenToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.salirToolStripMenuItem.Text = "Cerrar";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -98,7 +99,8 @@ namespace FilterZERO
             this.colorizarVidToolStripMenuItem,
             this.contrasteToolStripMenuItem,
             this.ruidoToolStripMenuItem,
-            this.invertirToolStripMenuItem});
+            this.invertirToolStripMenuItem,
+            this.ningunoToolStripMenuItem});
             this.filtrosToolStripMenuItem.Name = "filtrosToolStripMenuItem";
             this.filtrosToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.filtrosToolStripMenuItem.Text = "Filtros";
@@ -230,6 +232,13 @@ namespace FilterZERO
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "Videos mov|*.mov|IVideos mp4|*.mp4";
             // 
+            // ningunoToolStripMenuItem
+            // 
+            this.ningunoToolStripMenuItem.Name = "ningunoToolStripMenuItem";
+            this.ningunoToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.ningunoToolStripMenuItem.Text = "Ninguno";
+            this.ningunoToolStripMenuItem.Click += new System.EventHandler(this.ningunoToolStripMenuItem_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -275,5 +284,6 @@ namespace FilterZERO
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.ToolStripMenuItem ningunoToolStripMenuItem;
     }
 }

@@ -394,7 +394,11 @@ namespace FilterZERO
 
             return current;
         }
-       
+
+        private void ningunoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            filter = 5;
+        }
     }
 
 
