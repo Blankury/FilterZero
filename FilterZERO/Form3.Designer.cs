@@ -40,9 +40,11 @@ namespace FilterZERO
             this.CameraBox = new System.Windows.Forms.PictureBox();
             this.btnCapturar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.SelectedFace = new System.Windows.Forms.PictureBox();
+            this.cantFaces = new System.Windows.Forms.Label();
             this.namePerson = new System.Windows.Forms.TextBox();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.BtnAgregar = new System.Windows.Forms.Button();
+            this.NameList = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbCameras = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
@@ -51,6 +53,7 @@ namespace FilterZERO
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CameraBox)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SelectedFace)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -69,7 +72,7 @@ namespace FilterZERO
             this.cerrarToolStripMenuItem.Name = "cerrarToolStripMenuItem";
             this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.cerrarToolStripMenuItem.Text = "Cerrar";
-            this.cerrarToolStripMenuItem.Click += new System.EventHandler(this.archivoToolStripMenuItem_Click);
+            this.cerrarToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
             // panel2
             // 
@@ -151,20 +154,22 @@ namespace FilterZERO
             this.btnCapturar.FlatAppearance.BorderSize = 0;
             this.btnCapturar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCapturar.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapturar.Location = new System.Drawing.Point(135, 112);
+            this.btnCapturar.Location = new System.Drawing.Point(135, 99);
             this.btnCapturar.Name = "btnCapturar";
             this.btnCapturar.Size = new System.Drawing.Size(122, 50);
             this.btnCapturar.TabIndex = 4;
-            this.btnCapturar.Text = "Capturar";
+            this.btnCapturar.Text = "Abrir Camara";
             this.btnCapturar.UseVisualStyleBackColor = false;
-            this.btnCapturar.Click += new System.EventHandler(this.btnCapturar_Click);
+            this.btnCapturar.Click += new System.EventHandler(this.BtnCapturar_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gray;
+            this.panel1.Controls.Add(this.SelectedFace);
+            this.panel1.Controls.Add(this.cantFaces);
             this.panel1.Controls.Add(this.namePerson);
-            this.panel1.Controls.Add(this.btnAgregar);
-            this.panel1.Controls.Add(this.listBox1);
+            this.panel1.Controls.Add(this.BtnAgregar);
+            this.panel1.Controls.Add(this.NameList);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnCapturar);
             this.panel1.Controls.Add(this.cmbCameras);
@@ -174,34 +179,62 @@ namespace FilterZERO
             this.panel1.Size = new System.Drawing.Size(393, 426);
             this.panel1.TabIndex = 5;
             // 
+            // SelectedFace
+            // 
+            this.SelectedFace.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.SelectedFace.BackColor = System.Drawing.Color.Black;
+            this.SelectedFace.Location = new System.Drawing.Point(207, 267);
+            this.SelectedFace.Name = "SelectedFace";
+            this.SelectedFace.Size = new System.Drawing.Size(142, 147);
+            this.SelectedFace.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SelectedFace.TabIndex = 9;
+            this.SelectedFace.TabStop = false;
+            // 
+            // cantFaces
+            // 
+            this.cantFaces.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cantFaces.AutoSize = true;
+            this.cantFaces.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cantFaces.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cantFaces.Location = new System.Drawing.Point(132, 240);
+            this.cantFaces.Name = "cantFaces";
+            this.cantFaces.Size = new System.Drawing.Size(112, 13);
+            this.cantFaces.TabIndex = 6;
+            this.cantFaces.Text = "Cantidad de rostros:";
+            // 
             // namePerson
             // 
-            this.namePerson.Location = new System.Drawing.Point(65, 184);
+            this.namePerson.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.namePerson.Location = new System.Drawing.Point(42, 184);
             this.namePerson.Name = "namePerson";
-            this.namePerson.Size = new System.Drawing.Size(122, 20);
+            this.namePerson.Size = new System.Drawing.Size(179, 20);
             this.namePerson.TabIndex = 8;
             // 
-            // btnAgregar
+            // BtnAgregar
             // 
-            this.btnAgregar.BackColor = System.Drawing.Color.Orange;
-            this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(194, 168);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(122, 50);
-            this.btnAgregar.TabIndex = 7;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.BtnAgregar.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.BtnAgregar.BackColor = System.Drawing.Color.Orange;
+            this.BtnAgregar.FlatAppearance.BorderSize = 0;
+            this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAgregar.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregar.Location = new System.Drawing.Point(227, 168);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.Size = new System.Drawing.Size(122, 50);
+            this.BtnAgregar.TabIndex = 7;
+            this.BtnAgregar.Text = "Agregar";
+            this.BtnAgregar.UseVisualStyleBackColor = false;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
-            // listBox1
+            // NameList
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(42, 256);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(300, 147);
-            this.listBox1.TabIndex = 2;
+            this.NameList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.NameList.FormattingEnabled = true;
+            this.NameList.Location = new System.Drawing.Point(42, 267);
+            this.NameList.Name = "NameList";
+            this.NameList.Size = new System.Drawing.Size(145, 147);
+            this.NameList.TabIndex = 2;
+            this.NameList.SelectedIndexChanged += new System.EventHandler(this.NameList_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -250,6 +283,7 @@ namespace FilterZERO
             ((System.ComponentModel.ISupportInitialize)(this.CameraBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SelectedFace)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,9 +302,11 @@ namespace FilterZERO
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCapturar;
         private System.Windows.Forms.Label numFaces;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.ListBox NameList;
+        private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.PictureBox CameraBox;
         private System.Windows.Forms.TextBox namePerson;
+        private System.Windows.Forms.Label cantFaces;
+        private System.Windows.Forms.PictureBox SelectedFace;
     }
 }
