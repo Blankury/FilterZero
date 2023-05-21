@@ -1,6 +1,0 @@
-face1:ronron
-face2:nan
-face3:kot
-face4:seso
-face5:risas
-face6:risas2
