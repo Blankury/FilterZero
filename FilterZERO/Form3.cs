@@ -16,8 +16,6 @@ namespace FilterZERO
 {
     public partial class Form3 : Form
     {
-        private int faceCount = 0;
-
         //VideoCaptureDevice camara;
         FilterInfoCollection filterInfoCollection;
 

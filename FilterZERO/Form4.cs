@@ -78,7 +78,6 @@ namespace FilterZERO
         private void Form4_Paint(object sender, PaintEventArgs e)
         {
             int n = 0;
-            int altura = 0;
             Graphics g = e.Graphics;
             Pen plumaH = new Pen(Color.Black);
             Pen plumaR = new Pen(Color.Red);

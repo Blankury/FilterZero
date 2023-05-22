@@ -18,7 +18,6 @@ namespace FilterZERO
         int CurrentFrameNo;
         int FPS;
         private Bitmap original;
-        private Bitmap resultado;
         int filter = 5;
         public Form2()
         {
@@ -41,8 +40,8 @@ namespace FilterZERO
             {
 
                 capture = new VideoCapture(openFileDialog1.FileName);
-                TotalFrames = Convert.ToInt32(capture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.FrameCount));
-                FPS = Convert.ToInt32(capture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.Fps));
+                TotalFrames = Convert.ToInt32(capture.Get(Emgu.CV.CvEnum.CapProp.FrameCount));
+                FPS = Convert.ToInt32(capture.Get(Emgu.CV.CvEnum.CapProp.Fps));
                 IsPlaying = true;
                 CurrentFrame = new Mat ();
                 CurrentFrameNo = 0;
@@ -69,38 +68,38 @@ namespace FilterZERO
             {
                 while(IsPlaying == true && CurrentFrameNo < TotalFrames)
                 {
-                    capture.SetCaptureProperty(Emgu.CV.CvEnum.CapProp.PosFrames, CurrentFrameNo);
+                    capture.Set(Emgu.CV.CvEnum.CapProp.PosFrames, CurrentFrameNo);
                     capture.Read(CurrentFrame);
 
                     switch (filter)
                     {
                         case 0:
                             {
-                                original = AberracionCromaticaFiltro(CurrentFrame.Bitmap);
+                                original = AberracionCromaticaFiltro(CurrentFrame.ToBitmap());
                                 break;   
                             }
                         case 1:
                             {
-                                original = colorizarFiltro(CurrentFrame.Bitmap);
+                                original = colorizarFiltro(CurrentFrame.ToBitmap());
                                 break; }
                         case 2:
                             {
-                                original = contrasteFiltro(CurrentFrame.Bitmap);
+                                original = contrasteFiltro(CurrentFrame.ToBitmap());
                                 break;
                             }
                         case 3:
                             {
-                                original = ruidoFiltro(CurrentFrame.Bitmap);
+                                original = ruidoFiltro(CurrentFrame.ToBitmap());
                                 break;
                             }
                         case 4:
                             {
-                                original = TonosdeGrisFiltro(CurrentFrame.Bitmap);
+                                original = TonosdeGrisFiltro(CurrentFrame.ToBitmap());
                                 break;
                             }
                         default:
                             {
-                                original = CurrentFrame.Bitmap;
+                                original = CurrentFrame.ToBitmap();
 
                                 break;
                             }
