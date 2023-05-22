@@ -56,7 +56,7 @@
             },
             "Emgu.CV.runtime.windows": {
               "target": "Package",
-              "version": "[4.7.0.5276, )"
+              "version": "[4.5.5.4823, )"
             }
           }
         }

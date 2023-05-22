@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wrOZ8LC1B7YUe5WSxtL43yUH3YaTlXggvaF8sHiQsiOHDQ31wlj+iXplhyZjabEAb51LycnfT/kqZroem2Ytyw==",
+  "dgSpecHash": "tbu9Q06sjKa6AIXKfkgOHI0T12arylyUCT+HCAoTbCj53Pe4nPk/5Mm8kiSUBOU8T5Rq9mAZobbwGBbgAm2xrg==",
   "success": true,
   "projectFilePath": "E:\\Eliza\\LMAD\\Procesamiento\\FilterZERO\\FilterZERO\\FilterZERO.csproj",
   "expectedPackageFiles": [
@@ -9,11 +9,10 @@
     "C:\\Users\\beliz\\.nuget\\packages\\aforge.video.directshow\\2.2.5\\aforge.video.directshow.2.2.5.nupkg.sha512",
     "C:\\Users\\beliz\\.nuget\\packages\\emgu.cv\\4.7.0.5276\\emgu.cv.4.7.0.5276.nupkg.sha512",
     "C:\\Users\\beliz\\.nuget\\packages\\emgu.cv.bitmap\\4.7.0.5276\\emgu.cv.bitmap.4.7.0.5276.nupkg.sha512",
-    "C:\\Users\\beliz\\.nuget\\packages\\emgu.cv.runtime.windows\\4.7.0.5276\\emgu.cv.runtime.windows.4.7.0.5276.nupkg.sha512",
+    "C:\\Users\\beliz\\.nuget\\packages\\emgu.cv.runtime.windows\\4.5.5.4823\\emgu.cv.runtime.windows.4.5.5.4823.nupkg.sha512",
     "C:\\Users\\beliz\\.nuget\\packages\\emgu.cv.ui\\4.7.0.5276\\emgu.cv.ui.4.7.0.5276.nupkg.sha512",
-    "C:\\Users\\beliz\\.nuget\\packages\\emgu.runtime.windows.msvc.rt.arm64\\19.35.32217.1\\emgu.runtime.windows.msvc.rt.arm64.19.35.32217.1.nupkg.sha512",
-    "C:\\Users\\beliz\\.nuget\\packages\\emgu.runtime.windows.msvc.rt.x64\\19.35.32217.1\\emgu.runtime.windows.msvc.rt.x64.19.35.32217.1.nupkg.sha512",
-    "C:\\Users\\beliz\\.nuget\\packages\\emgu.runtime.windows.msvc.rt.x86\\19.35.32217.1\\emgu.runtime.windows.msvc.rt.x86.19.35.32217.1.nupkg.sha512",
+    "C:\\Users\\beliz\\.nuget\\packages\\emgu.runtime.windows.msvc.rt.x64\\19.29.30138\\emgu.runtime.windows.msvc.rt.x64.19.29.30138.nupkg.sha512",
+    "C:\\Users\\beliz\\.nuget\\packages\\emgu.runtime.windows.msvc.rt.x86\\19.29.30138\\emgu.runtime.windows.msvc.rt.x86.19.29.30138.nupkg.sha512",
     "C:\\Users\\beliz\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
     "C:\\Users\\beliz\\.nuget\\packages\\system.drawing.primitives\\4.3.0\\system.drawing.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\beliz\\.nuget\\packages\\system.runtime\\4.3.1\\system.runtime.4.3.1.nupkg.sha512",
