@@ -58,8 +58,8 @@ namespace FilterZERO
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Borrar_Filtros = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.RGB_histogram = new System.Windows.Forms.Button();
+            this.Gray_histogram = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -128,7 +128,7 @@ namespace FilterZERO
             // colorizarToolStripMenuItem
             // 
             this.colorizarToolStripMenuItem.Name = "colorizarToolStripMenuItem";
-            this.colorizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.colorizarToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.colorizarToolStripMenuItem.Text = "Colorizar";
             this.colorizarToolStripMenuItem.Click += new System.EventHandler(this.colorizarToolStripMenuItem_Click);
             // 
@@ -138,34 +138,34 @@ namespace FilterZERO
             this.toolStripMenuItem8,
             this.toolStripMenuItem11});
             this.contrasteToolStripMenuItem.Name = "contrasteToolStripMenuItem";
-            this.contrasteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.contrasteToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.contrasteToolStripMenuItem.Text = "Contraste";
             // 
             // toolStripMenuItem8
             // 
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(91, 22);
             this.toolStripMenuItem8.Text = "-50";
             this.toolStripMenuItem8.Click += new System.EventHandler(this.toolStripMenuItem8_Click);
             // 
             // toolStripMenuItem11
             // 
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(91, 22);
             this.toolStripMenuItem11.Text = "50";
             this.toolStripMenuItem11.Click += new System.EventHandler(this.toolStripMenuItem11_Click);
             // 
             // invertirToolStripMenuItem
             // 
             this.invertirToolStripMenuItem.Name = "invertirToolStripMenuItem";
-            this.invertirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.invertirToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.invertirToolStripMenuItem.Text = "Invertir";
             this.invertirToolStripMenuItem.Click += new System.EventHandler(this.invertirToolStripMenuItem_Click);
             // 
             // mosaicoToolStripMenuItem
             // 
             this.mosaicoToolStripMenuItem.Name = "mosaicoToolStripMenuItem";
-            this.mosaicoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mosaicoToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.mosaicoToolStripMenuItem.Text = "Mosaico";
             this.mosaicoToolStripMenuItem.Click += new System.EventHandler(this.mosaicoToolStripMenuItem_Click);
             // 
@@ -179,7 +179,7 @@ namespace FilterZERO
             this.ruido75,
             this.ruido90});
             this.ruidoToolStripMenuItem.Name = "ruidoToolStripMenuItem";
-            this.ruidoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ruidoToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.ruidoToolStripMenuItem.Text = "Ruido";
             // 
             // ruido15
@@ -227,7 +227,7 @@ namespace FilterZERO
             // tonosDeGrisToolStripMenuItem
             // 
             this.tonosDeGrisToolStripMenuItem.Name = "tonosDeGrisToolStripMenuItem";
-            this.tonosDeGrisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tonosDeGrisToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.tonosDeGrisToolStripMenuItem.Text = "Tonos de gris";
             this.tonosDeGrisToolStripMenuItem.Click += new System.EventHandler(this.tonosDeGrisToolStripMenuItem_Click);
             // 
@@ -279,8 +279,8 @@ namespace FilterZERO
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.Controls.Add(this.Borrar_Filtros);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.RGB_histogram);
+            this.panel1.Controls.Add(this.Gray_histogram);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
@@ -303,35 +303,35 @@ namespace FilterZERO
             this.Borrar_Filtros.UseVisualStyleBackColor = false;
             this.Borrar_Filtros.Click += new System.EventHandler(this.Borrar_Filtros_Click_1);
             // 
-            // button2
+            // RGB_histogram
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.DarkOrange;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(6, 172);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(196, 37);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Ver histograma";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.RGB_histogram.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.RGB_histogram.BackColor = System.Drawing.Color.DarkOrange;
+            this.RGB_histogram.FlatAppearance.BorderSize = 0;
+            this.RGB_histogram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RGB_histogram.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RGB_histogram.Location = new System.Drawing.Point(6, 172);
+            this.RGB_histogram.Name = "RGB_histogram";
+            this.RGB_histogram.Size = new System.Drawing.Size(196, 37);
+            this.RGB_histogram.TabIndex = 4;
+            this.RGB_histogram.Text = "Ver histograma";
+            this.RGB_histogram.UseVisualStyleBackColor = false;
+            this.RGB_histogram.Click += new System.EventHandler(this.RGB_histogram_Click);
             // 
-            // button1
+            // Gray_histogram
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.DarkOrange;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(6, 99);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(196, 37);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Ver histograma en grises";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Gray_histogram.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.Gray_histogram.BackColor = System.Drawing.Color.DarkOrange;
+            this.Gray_histogram.FlatAppearance.BorderSize = 0;
+            this.Gray_histogram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Gray_histogram.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Gray_histogram.Location = new System.Drawing.Point(6, 99);
+            this.Gray_histogram.Name = "Gray_histogram";
+            this.Gray_histogram.Size = new System.Drawing.Size(196, 37);
+            this.Gray_histogram.TabIndex = 1;
+            this.Gray_histogram.Text = "Ver histograma en grises";
+            this.Gray_histogram.UseVisualStyleBackColor = false;
+            this.Gray_histogram.Click += new System.EventHandler(this.Gray_histogram_Click);
             // 
             // Form1
             // 
@@ -377,7 +377,7 @@ namespace FilterZERO
         private System.Windows.Forms.ToolStripMenuItem mosaicoToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Gray_histogram;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem ruido15;
         private System.Windows.Forms.ToolStripMenuItem ruido30;
@@ -388,7 +388,7 @@ namespace FilterZERO
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem11;
         private System.Windows.Forms.ToolStripMenuItem tonosDeGrisToolStripMenuItem;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button RGB_histogram;
         private System.Windows.Forms.Button Borrar_Filtros;
     }
 }

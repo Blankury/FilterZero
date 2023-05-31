@@ -33,3 +33,4 @@ E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\bin\Debug\FilterZERO.applicati
 E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\obj\Debug\FilterZERO.exe.manifest
 E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\obj\Debug\FilterZERO.application
 E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\bin\Debug\opencv_videoio_ffmpeg455_64.dll
+E:\Eliza\LMAD\Procesamiento\FilterZERO\FilterZERO\obj\Debug\FilterZERO.csproj.AssemblyReference.cache

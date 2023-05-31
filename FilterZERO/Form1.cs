@@ -70,6 +70,90 @@ namespace FilterZERO
             Form3 NewWindow = new Form3();
             NewWindow.ShowDialog();
         }
+               
+        private void colorizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            double rc = 120 / 255.0;
+            double gc = 200 / 255.0;
+            double bc = 120 / 255.0;
+            Color miColor = new Color();
+            int r, g, b;
+
+            //Crear la imagen en tonos de gris
+            tonosDeGrisToolStripMenuItem_Click(sender, e);
+
+            for (int x = 0; x < apilado.Width; x++)
+            {
+                for (int y = 0; y < apilado.Height; y++)
+                {
+                    miColor = resultado.GetPixel(x, y);
+
+                    r = (int)(miColor.R * rc);
+                    g = (int)(miColor.G * gc);
+                    b = (int)(miColor.B * bc);
+
+                    resultado.SetPixel(x, y,  Color.FromArgb(r, g, b));
+                }
+            }
+
+            pictureBox1.Image = resultado;
+            apilado = resultado;
+        }
+
+        private void fContrast(object sender, EventArgs e, int Sporcentaje)
+        {
+            //diferenciar entre areas mas iluminadas y más oscuras
+            //el valor va de -100 a 100
+            float totalContraste = (100.0f + contraste) / 100.0f;
+            totalContraste *= totalContraste;
+            int x, y;
+
+            Color colorResultante = new Color();
+            Color colorOriginal = new Color();
+
+            float r, g, b;
+
+            for (x = 0; x < apilado.Width; x++)
+            {
+                for (y = 0; y < apilado.Height; y++)
+                {
+                    //Get pixel color
+                    colorOriginal = apilado.GetPixel(x, y);
+                    //process and get the new colorxdd le salia el ingles de repente
+                    r = ((((colorOriginal.R / 255.0f) - 0.5f) * totalContraste) + 0.5f) * 255;
+                    if (r > 255) r = 255;
+                    if (r < 0) r = 0;
+
+                    g = ((((colorOriginal.G / 255.0f) - 0.5f) * totalContraste) + 0.5f) * 255;
+                    if (g > 255) g = 255;
+                    if (g < 0) g = 0;
+
+                    b = ((((colorOriginal.B / 255.0f) - 0.5f) * totalContraste) + 0.5f) * 255;
+                    if (b > 255) b = 255;
+                    if (b < 0) b = 0;
+
+                    colorResultante = Color.FromArgb((int)r, (int)g, (int)b);
+                    resultado.SetPixel(x, y, colorResultante);
+                }
+            }
+
+
+            pictureBox1.Image = resultado;
+            apilado = resultado;
+        }
+
+        private void toolStripMenuItem8_Click(object sender, EventArgs e)
+        {
+            contraste = -50;
+            fContrast(sender, e, contraste);
+        }
+
+        private void toolStripMenuItem11_Click(object sender, EventArgs e)
+        {
+            contraste = 50;
+            fContrast(sender, e, contraste);
+        }
 
         private void invertirToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -96,53 +180,9 @@ namespace FilterZERO
             apilado = resultado;
         }
 
-        private void colorizarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //Tomar los componentes RGB y los transforma en porcentajes para saber la cantidad de RGB de cada pixel
-            //Al conocerlos recorremos pixel por pixlel la imagen transformada en grises y vamos a multiplicar los porcentajes por el gris correspondiente
-            //Asi obtenemos las variaciones de color
-
-            int x = 0;
-            int y = 0;
-            //queremos colorizar con (120, 200, 120)
-            double rc = 120 / 255.0;
-            double gc = 200 / 255.0;
-            double bc = 120 / 255.0;
-
-            Color miColor = new Color();
-            int r = 0;
-            int g = 0;
-            int b = 0;
-
-            //Crear la imagen en tonos de gris
-            tonosDeGrisToolStripMenuItem_Click(sender, e);
-
-            for (x = 0; x < apilado.Width; x++)
-            {
-                for (y = 0; y < apilado.Height; y++)
-                {
-                    miColor = resultado.GetPixel(x, y);
-
-                    r = (int)(miColor.R * rc);
-                    g = (int)(miColor.G * gc);
-                    b = (int)(miColor.B * bc);
-
-                    resultado.SetPixel(x, y,  Color.FromArgb(r, g, b));
-                }
-            }
-
-            pictureBox1.Image = resultado;
-            apilado = resultado;
-
-
-
-        }
-
         private void mosaicoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //mosaico imagina que recorre un area de tal tamaño y saca el promedio de color de esa area
-            int x = 0;
-            int y = 0;
             int mosaico = 8;
             int xm = 0;
             int ym = 0;
@@ -151,17 +191,13 @@ namespace FilterZERO
             Color colorOriginal;
 
             //sumas
-            int rs = 0;
-            int bs = 0;
-            int gs = 0;
+            int rs, bs, gs;
 
-            int r = 0;
-            int g = 0;
-            int b = 0;
+            int r, g, b;
 
-            for (x = 0; x < apilado.Width - mosaico; x +=mosaico)
+            for (int x = 0; x < apilado.Width - mosaico; x +=mosaico)
             {
-                for (y = 0; y < apilado.Height - mosaico; y +=mosaico)
+                for (int y = 0; y < apilado.Height - mosaico; y +=mosaico)
                 {
                     rs = 0;
                     gs = 0;
@@ -198,28 +234,22 @@ namespace FilterZERO
             apilado = resultado;
         }
 
-        private void contrasteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void tonosDeGrisToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Color colorResultante = new Color(); //color que resulta
-            Color colorOriginal = new Color(); //color que obtenemos de la imagen
+            Color colorResultante;
+            Color colorOriginal;
 
-            float Grises = 0;
+            float Grises; 
 
             for (int x = 0; x < apilado.Width; x++)
             {
                 for (int y = 0; y < apilado.Height; y++)
                 {
-                    //Obtnemos el color del pixel
                     colorOriginal = apilado.GetPixel(x, y);
-                    Grises = colorOriginal.R * 0.299f + colorOriginal.G * 0.587f + colorOriginal.B * 0.114f;
-
+                    
+                    Grises = colorOriginal.R * 0.267f + colorOriginal.G * 0.678f + colorOriginal.B * 0.0593f;
+                    //el color de gris se pone 
                     colorResultante = Color.FromArgb((int)Grises, (int)Grises, (int)Grises);
-
                     resultado.SetPixel(x , y, colorResultante);
                 }
             }
@@ -230,26 +260,26 @@ namespace FilterZERO
 
         private void fRuido(object sender, EventArgs e, int Sporcentaje)
         {
-            //0 a 200
+            //a tal porcentaje de los pixeles se les aplicará el ruido
+            //rango minimo de brillo y maximo
             //colores entre estos rangos uguuu
-            int rangoMin = 85;
-            int rangoMax = 115;
-            float pBrillo = 0;
+            int rangoMin = 50;
+            int rangoMax = 195;
+            float pBrillo;
 
             Random random = new Random();
 
             Color colorResultante;
             Color colorOriginal;
 
-            int r = 0;
-            int g = 0;
-            int b = 0;
+            int r, g, b;
 
             for (int x = 0; x < apilado.Width; x++)
             {
                 for (int y = 0; y < apilado.Height; y++)
                 {
-                    //Verificamos si el pixel tiene ruido o no
+                    //Verificamos si el pixel tendrá ruido o no al generar un numero al azar entre 1 y 100 si el num es
+                    //menor o igual al porcentaje no generará ruido
                     if (random.Next(1, 100) <= Sporcentaje)
                     {
                         //metodo 1 al color resultante le creamos un color al azar
@@ -286,8 +316,6 @@ namespace FilterZERO
 
             pictureBox1.Image = resultado;
             apilado = resultado;
-
-
         }
 
         private void ruido15_Click(object sender, EventArgs e)
@@ -326,64 +354,6 @@ namespace FilterZERO
             fRuido(sender, e, porcentaje);
         }
 
-        private void fContrast(object sender, EventArgs e, int Sporcentaje)
-        {
-            //diferenciar entre areas mas iluminadas y más oscuras
-            //el valor va de -100 a 100
-            float c = (100.0f + contraste) / 100.0f;
-            c *= c;
-            int x = 0;
-            int y = 0;
-
-            Color colorResultante = new Color();
-            Color colorOriginal = new Color();
-
-            float r = 0;
-            float g = 0;
-            float b = 0;
-
-            for (x = 0; x < apilado.Width; x++)
-            {
-                for (y = 0; y < apilado.Height; y++)
-                {
-                    //Get pixel color
-                    colorOriginal = apilado.GetPixel(x, y);
-                    //process and get the new colorxdd le salia el ingles de repente
-                    r = ((((colorOriginal.R / 255.0f) - 0.5f) * c) + 0.5f) * 255;
-                    if (r > 255) r = 255;
-                    if (r < 0) r = 0;
-
-                    g = ((((colorOriginal.G / 255.0f) - 0.5f) * c) + 0.5f) * 255;
-                    if (g > 255) g = 255;
-                    if (g < 0) g = 0;
-
-                    b = ((((colorOriginal.B / 255.0f) - 0.5f) * c) + 0.5f) * 255;
-                    if (b > 255) b = 255;
-                    if (b < 0) b = 0;
-
-                    colorResultante = Color.FromArgb((int)r, (int)g, (int)b);
-                    resultado.SetPixel(x, y, colorResultante);
-                }
-            }
-
-
-            pictureBox1.Image = resultado;
-            apilado = resultado;
-        }
-
-
-        private void toolStripMenuItem8_Click(object sender, EventArgs e)
-        {
-            contraste = -50;
-            fContrast(sender, e, contraste);
-        }
-
-        private void toolStripMenuItem11_Click(object sender, EventArgs e)
-        {
-            contraste = 50;
-            fContrast(sender, e, contraste);
-        }
-
         private void Borrar_Filtros_Click_1(object sender, EventArgs e)
         {
             //cargar la misma imagen de antes desde la ruta guardada
@@ -394,8 +364,7 @@ namespace FilterZERO
 
         }
 
-
-        private void button2_Click(object sender, EventArgs e)
+        private void RGB_histogram_Click(object sender, EventArgs e)
         {
             Color colorOriginal = new Color();
 
@@ -412,25 +381,19 @@ namespace FilterZERO
             }
             Form4 NewWindow = new Form4(histogramaR, histogramaG, histogramaB);
             NewWindow.ShowDialog();
-
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
+        private void Gray_histogram_Click(object sender, EventArgs e)
         {
             //Crear la imagen en tonos de gris
             tonosDeGrisToolStripMenuItem_Click(sender, e);
 
-            int x = 0;
-            int y = 0;
+            Color colorResultante = new Color();
 
-            Color colorResultante = new Color(); //color que resulta
-
-            for (x = 0; x < resultado.Width; x++)
+            for (int x = 0; x < resultado.Width; x++)
             {
-                for (y = 0; y < resultado.Height; y++)
+                for (int y = 0; y < resultado.Height; y++)
                 {
-                    //get pixel color
                     colorResultante = resultado.GetPixel(x, y);
                     histograma[colorResultante.R]++;
                 }
@@ -438,7 +401,5 @@ namespace FilterZERO
             Form4 NewWindow = new Form4(histograma);
             NewWindow.ShowDialog();
         }
-
-
     }
 }
